@@ -1,0 +1,6267 @@
+{
+ "meta": {
+  "titre": "Nomenclature matériels réseaux BT/HTA — SIEEP-HC",
+  "source": "BPU 2024-2027 SIEEP-HC (5 lots) — codes d'articles volontairement retirés : cette nomenclature sert à la conception des plans, pas au chiffrage.",
+  "version": "2.0",
+  "nb_articles": 518
+ },
+ "categories": [
+  "ARMEMENT_BT",
+  "ARMEMENT_HTA",
+  "BOITE_JONCTION",
+  "CABLE",
+  "COFFRET_BT",
+  "COUPURE_HTA",
+  "DEPOSE_EXISTANT",
+  "DIVERS",
+  "ECLAIRAGE_PUBLIC",
+  "ERAS",
+  "FOURREAU",
+  "MALT",
+  "POSTE",
+  "SUPPORT"
+ ],
+ "regles": {
+  "armement_bt_neutre_porteur": {
+   "description": "Le suffixe 54 ou 70 de l'armement suit le neutre porteur du faisceau.",
+   "54": [
+    "3x35+54,6",
+    "3x70+54,6"
+   ],
+   "70": [
+    "3x70+70",
+    "3x150+70"
+   ],
+   "bloquant": false
+  },
+  "rembt_plages": {
+   "REMBT 300": 6,
+   "REMBT 450": 9,
+   "REMBT 600": 12,
+   "bloquant": false,
+   "description": "nb_plages(borne) = nb_plages(support barres) = Σ modules installés."
+  },
+  "cibe_grille_selon_section": {
+   "description": "La grille découle de la section du câble réseau entrant.",
+   "35": [
+    "Grille de repiquage 35² IP2X"
+   ],
+   "150": [
+    "Grille d'étoilement 150² IP2X",
+    "Grille fausse coupure 150² IP2X"
+   ],
+   "240": [
+    "Grille fausse coupure 240² IP2X G3"
+   ],
+   "note": "Une borne Cibe se saisit toujours avec sa grille.",
+   "bloquant": false
+  },
+  "malt_implantation": {
+   "systematique_si": [
+    "coffret ou borne REMBT",
+    "ERAS réseau sur support ou façade en contexte souterrain",
+    "tous les ~200 m sur réseau BT aérien",
+    "chaque support d'arrêt / fin de ligne",
+    "chaque support de jonction triple ou quadruple"
+   ],
+   "jamais_si": [
+    "coffret de branchement individuel (CIBE et assimilés)",
+    "RAS de branchement"
+   ],
+   "convention_plan": "L'annotation « Tr » portée sur un support en APS signifie MALT à confectionner à ce support (ni tranchée ni traversée).",
+   "bloquant": false
+  },
+  "packages": {
+   "MALT": [
+    {
+     "libelle": "Confection d'une prise de terre + descente câble cuivre 25 mm²",
+     "qte": 1,
+     "unite": "U"
+    },
+    {
+     "libelle": "Gaine thermorétractable 1 m sur conducteur de terre 25 mm²",
+     "qte": 1,
+     "unite": "ML"
+    },
+    {
+     "libelle": "Amélioration par câblette cuivre nu 25 mm² (tranchée dédiée OU tranchée ouverte)",
+     "qte": 10,
+     "unite": "ML",
+     "note": "Tranchée dédiée si aérien, tranchée ouverte si souterrain — mutuellement exclusifs"
+    },
+    {
+     "libelle": "Piquets de terre de 1 m",
+     "qte": 4,
+     "unite": "U"
+    }
+   ],
+   "ERAS_BT_RESEAU": [
+    {
+     "libelle": "Remontée de câble aéro-souterrain réseau",
+     "qte": 1
+    },
+    {
+     "libelle": "Jonction aéro-souterraine (T 70 ou T 150 selon sections)",
+     "qte": 1
+    },
+    {
+     "libelle": "Capuchon d'extrémité thermorétractable",
+     "qte": 1,
+     "note": "si extrémité aérienne"
+    },
+    {
+     "libelle": "PACKAGE:MALT",
+     "qte": 1
+    }
+   ],
+   "ERAS_HTA": [
+    {
+     "libelle": "Chemin de câble sur support métallique",
+     "qte": 1
+    },
+    {
+     "libelle": "Extrémité unipolaire rétractable à froid (95² ou 150²)",
+     "qte": 3
+    },
+    {
+     "libelle": "Kit parafoudre ERAS (ou lot P 24 selon zone)",
+     "qte": 1
+    },
+    {
+     "libelle": "PACKAGE:MALT",
+     "qte": 1
+    },
+    {
+     "libelle": "Câble souterrain HTA (3x95, 3x150 ou 3x240)"
+    }
+   ],
+   "RAS_BRT": [
+    {
+     "libelle": "Brin aérien de branchement torsadé 4x25",
+     "note": "ml selon portée"
+    },
+    {
+     "libelle": "Câble de branchement 4x35 massif",
+     "qte": 6,
+     "unite": "ML"
+    },
+    {
+     "libelle": "Remontée aéro-souterraine de branchement",
+     "qte": 1
+    },
+    {
+     "libelle": "Fourreau TPC rouge ∅ 63",
+     "qte": 6,
+     "unite": "ML"
+    },
+    {
+     "libelle": "Raccordement (monophasé ou triphasé)",
+     "qte": 1
+    }
+   ]
+  },
+  "jonctions_aero_souterraines": {
+   "T 70 sur 3x150+70": {
+    "aerien": "torsadé 3x70+70",
+    "souterrain": "3x150+70"
+   },
+   "T 150 sur 3x150+70": {
+    "aerien": "torsadé 3x150+70",
+    "souterrain": "3x150+70"
+   },
+   "T 150 sur 3x240": {
+    "aerien": "torsadé 3x150+70",
+    "souterrain": "3x240+95/115"
+   },
+   "convention_sieep": "Cas T 70 sur 3x240 : retenir T 150 sur 3x240 (priorité au côté câble souterrain)."
+  },
+  "notation_cables": {
+   "EP": "EP TPC ∅ 63",
+   "branchement_souterrain": "4x35 TPC ∅ 90",
+   "reseau_bt_souterrain": "section + fourreau si posé sous fourreau (ex. 3x150+70 TPC ∅ 160), sinon section seule"
+  },
+  "orthographe_imposee": [
+   "PSS-A",
+   "PSS-B"
+  ]
+ },
+ "designations_supports": {
+  "principe": "Générée à partir des seuls attributs renseignés : elle se tronque, elle ne se complète jamais par des valeurs supposées. Toujours modifiable à la main (la saisie manuelle prime).",
+  "formats": {
+   "BETON": {
+    "format": "BE {hauteur}m {classe} {effort}",
+    "exemple": "BE 11m D 1000"
+   },
+   "BOIS": {
+    "format": "BØ {hauteur}m {classe}",
+    "exemple": "BØ 11m S 140"
+   },
+   "BOIS_JUMELE": {
+    "format": "BØ J 2x{hauteur}m {classe}",
+    "exemple": "BØ J 2x11m S 140"
+   },
+   "BOIS_CONTREFICHE": {
+    "format": "BØ CF 2x{hauteur}m Y {effort}",
+    "exemple": "BØ CF 2x11m Y 190",
+    "note": "Le Y est volontaire et propre au contrefiché — ne pas le remplacer par S."
+   },
+   "BOIS_HAUBANE": {
+    "format": "BØ H {hauteur}m {classe}",
+    "exemple": "BØ H 12m S 190"
+   },
+   "ME_TUB": {
+    "format": "ME tub {hauteur}m {effort}",
+    "exemple": "ME tub 14m 1600",
+    "note": "Métallique tubulaire — supports posés en neuf."
+   },
+   "ME_PTR": {
+    "format": "ME ptr {hauteur}m {effort}",
+    "exemple": "ME ptr 12m 800",
+    "note": "Poutrelle métallique — existant ou à déposer."
+   }
+  },
+  "troncature": [
+   "BE 11m D 1000",
+   "BE 11m D",
+   "BE 11m",
+   "BE existant"
+  ]
+ },
+ "articles": [
+  {
+   "id": "a0001",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 10 X 650 D",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 10,
+    "classe": "D",
+    "effort_daN": 650,
+    "designation_plan": "BE 10m D 650",
+    "symbole": "RECTANGLE"
+   }
+  },
+  {
+   "id": "a0002",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 10 X 800 D",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 10,
+    "classe": "D",
+    "effort_daN": 800,
+    "designation_plan": "BE 10m D 800",
+    "symbole": "RECTANGLE"
+   }
+  },
+  {
+   "id": "a0003",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 10 X 1000 D",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 10,
+    "classe": "D",
+    "effort_daN": 1000,
+    "designation_plan": "BE 10m D 1000",
+    "symbole": "RECTANGLE"
+   }
+  },
+  {
+   "id": "a0004",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 10 X 1250 D",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 10,
+    "classe": "D",
+    "effort_daN": 1250,
+    "designation_plan": "BE 10m D 1250",
+    "symbole": "RECTANGLE"
+   }
+  },
+  {
+   "id": "a0005",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 10 X 1600 D",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 10,
+    "classe": "D",
+    "effort_daN": 1600,
+    "designation_plan": "BE 10m D 1600",
+    "symbole": "RECTANGLE"
+   }
+  },
+  {
+   "id": "a0006",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 10 X 1250 E",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 10,
+    "classe": "E",
+    "effort_daN": 1250,
+    "designation_plan": "BE 10m E 1250",
+    "symbole": "CARRE"
+   }
+  },
+  {
+   "id": "a0007",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 10 X 1600 E",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 10,
+    "classe": "E",
+    "effort_daN": 1600,
+    "designation_plan": "BE 10m E 1600",
+    "symbole": "CARRE"
+   }
+  },
+  {
+   "id": "a0008",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 11 X 650 D",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 11,
+    "classe": "D",
+    "effort_daN": 650,
+    "designation_plan": "BE 11m D 650",
+    "symbole": "RECTANGLE"
+   }
+  },
+  {
+   "id": "a0009",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 11 X 800 D",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 11,
+    "classe": "D",
+    "effort_daN": 800,
+    "designation_plan": "BE 11m D 800",
+    "symbole": "RECTANGLE"
+   }
+  },
+  {
+   "id": "a0010",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 11 X 1000 D",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 11,
+    "classe": "D",
+    "effort_daN": 1000,
+    "designation_plan": "BE 11m D 1000",
+    "symbole": "RECTANGLE"
+   }
+  },
+  {
+   "id": "a0011",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 11 X 1250 D",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 11,
+    "classe": "D",
+    "effort_daN": 1250,
+    "designation_plan": "BE 11m D 1250",
+    "symbole": "RECTANGLE"
+   }
+  },
+  {
+   "id": "a0012",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 11 X 1600 D",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 11,
+    "classe": "D",
+    "effort_daN": 1600,
+    "designation_plan": "BE 11m D 1600",
+    "symbole": "RECTANGLE"
+   }
+  },
+  {
+   "id": "a0013",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 11 X 1250 E",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 11,
+    "classe": "E",
+    "effort_daN": 1250,
+    "designation_plan": "BE 11m E 1250",
+    "symbole": "CARRE"
+   }
+  },
+  {
+   "id": "a0014",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 11 X 1600 E",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 11,
+    "classe": "E",
+    "effort_daN": 1600,
+    "designation_plan": "BE 11m E 1600",
+    "symbole": "CARRE"
+   }
+  },
+  {
+   "id": "a0015",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 11 X 2000 E",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 11,
+    "classe": "E",
+    "effort_daN": 2000,
+    "designation_plan": "BE 11m E 2000",
+    "symbole": "CARRE"
+   }
+  },
+  {
+   "id": "a0016",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 12 X 650 D",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 12,
+    "classe": "D",
+    "effort_daN": 650,
+    "designation_plan": "BE 12m D 650",
+    "symbole": "RECTANGLE"
+   }
+  },
+  {
+   "id": "a0017",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 12 X 800 D",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 12,
+    "classe": "D",
+    "effort_daN": 800,
+    "designation_plan": "BE 12m D 800",
+    "symbole": "RECTANGLE"
+   }
+  },
+  {
+   "id": "a0018",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 12 X 1000 D",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 12,
+    "classe": "D",
+    "effort_daN": 1000,
+    "designation_plan": "BE 12m D 1000",
+    "symbole": "RECTANGLE"
+   }
+  },
+  {
+   "id": "a0019",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 12 X 1250 D",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 12,
+    "classe": "D",
+    "effort_daN": 1250,
+    "designation_plan": "BE 12m D 1250",
+    "symbole": "RECTANGLE"
+   }
+  },
+  {
+   "id": "a0020",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 12 X 1600 D",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 12,
+    "classe": "D",
+    "effort_daN": 1600,
+    "designation_plan": "BE 12m D 1600",
+    "symbole": "RECTANGLE"
+   }
+  },
+  {
+   "id": "a0021",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 12 X 1250 E",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 12,
+    "classe": "E",
+    "effort_daN": 1250,
+    "designation_plan": "BE 12m E 1250",
+    "symbole": "CARRE"
+   }
+  },
+  {
+   "id": "a0022",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 12 X 1600 E",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 12,
+    "classe": "E",
+    "effort_daN": 1600,
+    "designation_plan": "BE 12m E 1600",
+    "symbole": "CARRE"
+   }
+  },
+  {
+   "id": "a0023",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 12 X 2000 E",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 12,
+    "classe": "E",
+    "effort_daN": 2000,
+    "designation_plan": "BE 12m E 2000",
+    "symbole": "CARRE"
+   }
+  },
+  {
+   "id": "a0024",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 13 X 650 D",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 13,
+    "classe": "D",
+    "effort_daN": 650,
+    "designation_plan": "BE 13m D 650",
+    "symbole": "RECTANGLE"
+   }
+  },
+  {
+   "id": "a0025",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 13 X 800 D",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 13,
+    "classe": "D",
+    "effort_daN": 800,
+    "designation_plan": "BE 13m D 800",
+    "symbole": "RECTANGLE"
+   }
+  },
+  {
+   "id": "a0026",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 13 X 1000 D",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 13,
+    "classe": "D",
+    "effort_daN": 1000,
+    "designation_plan": "BE 13m D 1000",
+    "symbole": "RECTANGLE"
+   }
+  },
+  {
+   "id": "a0027",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 13 X 1250 D",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 13,
+    "classe": "D",
+    "effort_daN": 1250,
+    "designation_plan": "BE 13m D 1250",
+    "symbole": "RECTANGLE"
+   }
+  },
+  {
+   "id": "a0028",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 13 X 1600 D",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 13,
+    "classe": "D",
+    "effort_daN": 1600,
+    "designation_plan": "BE 13m D 1600",
+    "symbole": "RECTANGLE"
+   }
+  },
+  {
+   "id": "a0029",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 13 X 1250 E",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 13,
+    "classe": "E",
+    "effort_daN": 1250,
+    "designation_plan": "BE 13m E 1250",
+    "symbole": "CARRE"
+   }
+  },
+  {
+   "id": "a0030",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 13 X 1600 E",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 13,
+    "classe": "E",
+    "effort_daN": 1600,
+    "designation_plan": "BE 13m E 1600",
+    "symbole": "CARRE"
+   }
+  },
+  {
+   "id": "a0031",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 13 X 2000 E",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 13,
+    "classe": "E",
+    "effort_daN": 2000,
+    "designation_plan": "BE 13m E 2000",
+    "symbole": "CARRE"
+   }
+  },
+  {
+   "id": "a0032",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 14 X 650 D",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 14,
+    "classe": "D",
+    "effort_daN": 650,
+    "designation_plan": "BE 14m D 650",
+    "symbole": "RECTANGLE"
+   }
+  },
+  {
+   "id": "a0033",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 14 X 800 D",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 14,
+    "classe": "D",
+    "effort_daN": 800,
+    "designation_plan": "BE 14m D 800",
+    "symbole": "RECTANGLE"
+   }
+  },
+  {
+   "id": "a0034",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 14 X 1000 D",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 14,
+    "classe": "D",
+    "effort_daN": 1000,
+    "designation_plan": "BE 14m D 1000",
+    "symbole": "RECTANGLE"
+   }
+  },
+  {
+   "id": "a0035",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 14 X 1250 D",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 14,
+    "classe": "D",
+    "effort_daN": 1250,
+    "designation_plan": "BE 14m D 1250",
+    "symbole": "RECTANGLE"
+   }
+  },
+  {
+   "id": "a0036",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 14 X 1600 D",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 14,
+    "classe": "D",
+    "effort_daN": 1600,
+    "designation_plan": "BE 14m D 1600",
+    "symbole": "RECTANGLE"
+   }
+  },
+  {
+   "id": "a0037",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 14 X 1250 E",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 14,
+    "classe": "E",
+    "effort_daN": 1250,
+    "designation_plan": "BE 14m E 1250",
+    "symbole": "CARRE"
+   }
+  },
+  {
+   "id": "a0038",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 14 X 1600 E",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 14,
+    "classe": "E",
+    "effort_daN": 1600,
+    "designation_plan": "BE 14m E 1600",
+    "symbole": "CARRE"
+   }
+  },
+  {
+   "id": "a0039",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 14 X 2000 E",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 14,
+    "classe": "E",
+    "effort_daN": 2000,
+    "designation_plan": "BE 14m E 2000",
+    "symbole": "CARRE"
+   }
+  },
+  {
+   "id": "a0040",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 15 X 650 D",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 15,
+    "classe": "D",
+    "effort_daN": 650,
+    "designation_plan": "BE 15m D 650",
+    "symbole": "RECTANGLE"
+   }
+  },
+  {
+   "id": "a0041",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 15 X 1000 D",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 15,
+    "classe": "D",
+    "effort_daN": 1000,
+    "designation_plan": "BE 15m D 1000",
+    "symbole": "RECTANGLE"
+   }
+  },
+  {
+   "id": "a0042",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 15 X 1250 D",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 15,
+    "classe": "D",
+    "effort_daN": 1250,
+    "designation_plan": "BE 15m D 1250",
+    "symbole": "RECTANGLE"
+   }
+  },
+  {
+   "id": "a0043",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 16 X 1000 D",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 16,
+    "classe": "D",
+    "effort_daN": 1000,
+    "designation_plan": "BE 16m D 1000",
+    "symbole": "RECTANGLE"
+   }
+  },
+  {
+   "id": "a0044",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BETON_PBA",
+   "libelle": "PBA 16 X 1250 D",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BETON",
+    "hauteur_m": 16,
+    "classe": "D",
+    "effort_daN": 1250,
+    "designation_plan": "BE 16m D 1250",
+    "symbole": "RECTANGLE"
+   }
+  },
+  {
+   "id": "a0045",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BOIS",
+   "libelle": "Poteau Bois S 140 - 10 m",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BOIS",
+    "hauteur_m": 10,
+    "classe": "S 140",
+    "designation_plan": "BØ 10m S 140",
+    "symbole": "CERCLE",
+    "note": "Non soclé, imprégnation procédé « estradiol »"
+   }
+  },
+  {
+   "id": "a0046",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BOIS",
+   "libelle": "Poteau Bois S 140 - 11 m",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BOIS",
+    "hauteur_m": 11,
+    "classe": "S 140",
+    "designation_plan": "BØ 11m S 140",
+    "symbole": "CERCLE",
+    "note": "Non soclé, imprégnation procédé « estradiol »"
+   }
+  },
+  {
+   "id": "a0047",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BOIS",
+   "libelle": "Poteau Bois S 140 - 12 m",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BOIS",
+    "hauteur_m": 12,
+    "classe": "S 140",
+    "designation_plan": "BØ 12m S 140",
+    "symbole": "CERCLE",
+    "note": "Non soclé, imprégnation procédé « estradiol »"
+   }
+  },
+  {
+   "id": "a0048",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BOIS",
+   "libelle": "Poteau Bois S 140 - 13 m",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BOIS",
+    "hauteur_m": 13,
+    "classe": "S 140",
+    "designation_plan": "BØ 13m S 140",
+    "symbole": "CERCLE",
+    "note": "Non soclé, imprégnation procédé « estradiol »"
+   }
+  },
+  {
+   "id": "a0049",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BOIS",
+   "libelle": "Poteau Bois S 140 - 14 m",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BOIS",
+    "hauteur_m": 14,
+    "classe": "S 140",
+    "designation_plan": "BØ 14m S 140",
+    "symbole": "CERCLE",
+    "note": "Non soclé, imprégnation procédé « estradiol »"
+   }
+  },
+  {
+   "id": "a0050",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BOIS",
+   "libelle": "Poteau Bois S 140 - 15 m",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BOIS",
+    "hauteur_m": 15,
+    "classe": "S 140",
+    "designation_plan": "BØ 15m S 140",
+    "symbole": "CERCLE",
+    "note": "Non soclé, imprégnation procédé « estradiol »"
+   }
+  },
+  {
+   "id": "a0051",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BOIS",
+   "libelle": "Poteau Bois S 140 - 16 m",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BOIS",
+    "hauteur_m": 16,
+    "classe": "S 140",
+    "designation_plan": "BØ 16m S 140",
+    "symbole": "CERCLE",
+    "note": "Non soclé, imprégnation procédé « estradiol »"
+   }
+  },
+  {
+   "id": "a0052",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BOIS",
+   "libelle": "Poteau Bois S 190 - 10 m",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BOIS",
+    "hauteur_m": 10,
+    "classe": "S 190",
+    "designation_plan": "BØ 10m S 190",
+    "symbole": "CERCLE",
+    "note": "Non soclé, imprégnation procédé « estradiol »"
+   }
+  },
+  {
+   "id": "a0053",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BOIS",
+   "libelle": "Poteau Bois S 190 - 11 m",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BOIS",
+    "hauteur_m": 11,
+    "classe": "S 190",
+    "designation_plan": "BØ 11m S 190",
+    "symbole": "CERCLE",
+    "note": "Non soclé, imprégnation procédé « estradiol »"
+   }
+  },
+  {
+   "id": "a0054",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BOIS",
+   "libelle": "Poteau Bois S 190 - 12 m",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BOIS",
+    "hauteur_m": 12,
+    "classe": "S 190",
+    "designation_plan": "BØ 12m S 190",
+    "symbole": "CERCLE",
+    "note": "Non soclé, imprégnation procédé « estradiol »"
+   }
+  },
+  {
+   "id": "a0055",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BOIS",
+   "libelle": "Poteau Bois S 190 - 13 m",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BOIS",
+    "hauteur_m": 13,
+    "classe": "S 190",
+    "designation_plan": "BØ 13m S 190",
+    "symbole": "CERCLE",
+    "note": "Non soclé, imprégnation procédé « estradiol »"
+   }
+  },
+  {
+   "id": "a0056",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BOIS",
+   "libelle": "Poteau Bois S 190 - 14 m",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BOIS",
+    "hauteur_m": 14,
+    "classe": "S 190",
+    "designation_plan": "BØ 14m S 190",
+    "symbole": "CERCLE",
+    "note": "Non soclé, imprégnation procédé « estradiol »"
+   }
+  },
+  {
+   "id": "a0057",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BOIS",
+   "libelle": "Poteau Bois S 190 - 15 m",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BOIS",
+    "hauteur_m": 15,
+    "classe": "S 190",
+    "designation_plan": "BØ 15m S 190",
+    "symbole": "CERCLE",
+    "note": "Non soclé, imprégnation procédé « estradiol »"
+   }
+  },
+  {
+   "id": "a0058",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BOIS",
+   "libelle": "Poteau Bois S 190 - 16 m",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BOIS",
+    "hauteur_m": 16,
+    "classe": "S 190",
+    "designation_plan": "BØ 16m S 190",
+    "symbole": "CERCLE",
+    "note": "Non soclé, imprégnation procédé « estradiol »"
+   }
+  },
+  {
+   "id": "a0059",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BOIS",
+   "libelle": "Poteau Bois S 255 - 10 m",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BOIS",
+    "hauteur_m": 10,
+    "classe": "S 255",
+    "designation_plan": "BØ 10m S 255",
+    "symbole": "CERCLE",
+    "note": "Non soclé, imprégnation procédé « estradiol »"
+   }
+  },
+  {
+   "id": "a0060",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BOIS",
+   "libelle": "Poteau Bois S 255 - 11 m",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BOIS",
+    "hauteur_m": 11,
+    "classe": "S 255",
+    "designation_plan": "BØ 11m S 255",
+    "symbole": "CERCLE",
+    "note": "Non soclé, imprégnation procédé « estradiol »"
+   }
+  },
+  {
+   "id": "a0061",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BOIS",
+   "libelle": "Poteau Bois S 255 - 12 m",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BOIS",
+    "hauteur_m": 12,
+    "classe": "S 255",
+    "designation_plan": "BØ 12m S 255",
+    "symbole": "CERCLE",
+    "note": "Non soclé, imprégnation procédé « estradiol »"
+   }
+  },
+  {
+   "id": "a0062",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BOIS",
+   "libelle": "Poteau Bois S 255 - 13 m",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BOIS",
+    "hauteur_m": 13,
+    "classe": "S 255",
+    "designation_plan": "BØ 13m S 255",
+    "symbole": "CERCLE",
+    "note": "Non soclé, imprégnation procédé « estradiol »"
+   }
+  },
+  {
+   "id": "a0063",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BOIS",
+   "libelle": "Poteau Bois S 255 - 14 m",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BOIS",
+    "hauteur_m": 14,
+    "classe": "S 255",
+    "designation_plan": "BØ 14m S 255",
+    "symbole": "CERCLE",
+    "note": "Non soclé, imprégnation procédé « estradiol »"
+   }
+  },
+  {
+   "id": "a0064",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BOIS",
+   "libelle": "Poteau Bois S 255 - 15 m",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BOIS",
+    "hauteur_m": 15,
+    "classe": "S 255",
+    "designation_plan": "BØ 15m S 255",
+    "symbole": "CERCLE",
+    "note": "Non soclé, imprégnation procédé « estradiol »"
+   }
+  },
+  {
+   "id": "a0065",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BOIS",
+   "libelle": "Poteau Bois S 255 - 16 m",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BOIS",
+    "hauteur_m": 16,
+    "classe": "S 255",
+    "designation_plan": "BØ 16m S 255",
+    "symbole": "CERCLE",
+    "note": "Non soclé, imprégnation procédé « estradiol »"
+   }
+  },
+  {
+   "id": "a0066",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BOIS",
+   "libelle": "Poteau Bois S 325 - 10 m",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BOIS",
+    "hauteur_m": 10,
+    "classe": "S 325",
+    "designation_plan": "BØ 10m S 325",
+    "symbole": "CERCLE",
+    "note": "Non soclé, imprégnation procédé « estradiol »"
+   }
+  },
+  {
+   "id": "a0067",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BOIS",
+   "libelle": "Poteau Bois S 325 - 11 m",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BOIS",
+    "hauteur_m": 11,
+    "classe": "S 325",
+    "designation_plan": "BØ 11m S 325",
+    "symbole": "CERCLE",
+    "note": "Non soclé, imprégnation procédé « estradiol »"
+   }
+  },
+  {
+   "id": "a0068",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BOIS",
+   "libelle": "Poteau Bois S 325 - 12 m",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BOIS",
+    "hauteur_m": 12,
+    "classe": "S 325",
+    "designation_plan": "BØ 12m S 325",
+    "symbole": "CERCLE",
+    "note": "Non soclé, imprégnation procédé « estradiol »"
+   }
+  },
+  {
+   "id": "a0069",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BOIS",
+   "libelle": "Poteau Bois S 325 - 13 m",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BOIS",
+    "hauteur_m": 13,
+    "classe": "S 325",
+    "designation_plan": "BØ 13m S 325",
+    "symbole": "CERCLE",
+    "note": "Non soclé, imprégnation procédé « estradiol »"
+   }
+  },
+  {
+   "id": "a0070",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BOIS",
+   "libelle": "Poteau Bois S 325 - 14 m",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BOIS",
+    "hauteur_m": 14,
+    "classe": "S 325",
+    "designation_plan": "BØ 14m S 325",
+    "symbole": "CERCLE",
+    "note": "Non soclé, imprégnation procédé « estradiol »"
+   }
+  },
+  {
+   "id": "a0071",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BOIS",
+   "libelle": "Poteau Bois S 325 - 15 m",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BOIS",
+    "hauteur_m": 15,
+    "classe": "S 325",
+    "designation_plan": "BØ 15m S 325",
+    "symbole": "CERCLE",
+    "note": "Non soclé, imprégnation procédé « estradiol »"
+   }
+  },
+  {
+   "id": "a0072",
+   "categorie": "SUPPORT",
+   "sous_categorie": "BOIS",
+   "libelle": "Poteau Bois S 325 - 16 m",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "BOIS",
+    "hauteur_m": 16,
+    "classe": "S 325",
+    "designation_plan": "BØ 16m S 325",
+    "symbole": "CERCLE",
+    "note": "Non soclé, imprégnation procédé « estradiol »"
+   }
+  },
+  {
+   "id": "a0073",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 10 X 500",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 10,
+    "effort_daN": 500,
+    "designation_plan": "ME tub 10m 500",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0074",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 10 X 650",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 10,
+    "effort_daN": 650,
+    "designation_plan": "ME tub 10m 650",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0075",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 10 X 800",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 10,
+    "effort_daN": 800,
+    "designation_plan": "ME tub 10m 800",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0076",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 10 X 1000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 10,
+    "effort_daN": 1000,
+    "designation_plan": "ME tub 10m 1000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0077",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 10 X 1250",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 10,
+    "effort_daN": 1250,
+    "designation_plan": "ME tub 10m 1250",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0078",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 10 X 1600",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 10,
+    "effort_daN": 1600,
+    "designation_plan": "ME tub 10m 1600",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0079",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 10 X 2000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 10,
+    "effort_daN": 2000,
+    "designation_plan": "ME tub 10m 2000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0080",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 10 X 2500",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 10,
+    "effort_daN": 2500,
+    "designation_plan": "ME tub 10m 2500",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0081",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 10 X 3200",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 10,
+    "effort_daN": 3200,
+    "designation_plan": "ME tub 10m 3200",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0082",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 10 X 4000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 10,
+    "effort_daN": 4000,
+    "designation_plan": "ME tub 10m 4000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0083",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 10 X 5000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 10,
+    "effort_daN": 5000,
+    "designation_plan": "ME tub 10m 5000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0084",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 11 X 500",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 11,
+    "effort_daN": 500,
+    "designation_plan": "ME tub 11m 500",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0085",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 11 X 650",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 11,
+    "effort_daN": 650,
+    "designation_plan": "ME tub 11m 650",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0086",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 11 X 800",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 11,
+    "effort_daN": 800,
+    "designation_plan": "ME tub 11m 800",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0087",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 11 X 1000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 11,
+    "effort_daN": 1000,
+    "designation_plan": "ME tub 11m 1000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0088",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 11 X 1250",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 11,
+    "effort_daN": 1250,
+    "designation_plan": "ME tub 11m 1250",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0089",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 11 X 1600",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 11,
+    "effort_daN": 1600,
+    "designation_plan": "ME tub 11m 1600",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0090",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 11 X 2000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 11,
+    "effort_daN": 2000,
+    "designation_plan": "ME tub 11m 2000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0091",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 11 X 2500",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 11,
+    "effort_daN": 2500,
+    "designation_plan": "ME tub 11m 2500",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0092",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 11 X 3200",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 11,
+    "effort_daN": 3200,
+    "designation_plan": "ME tub 11m 3200",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0093",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 11 X 4000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 11,
+    "effort_daN": 4000,
+    "designation_plan": "ME tub 11m 4000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0094",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 11 X 5000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 11,
+    "effort_daN": 5000,
+    "designation_plan": "ME tub 11m 5000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0095",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 12 X 500",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 12,
+    "effort_daN": 500,
+    "designation_plan": "ME tub 12m 500",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0096",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 12 X 650",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 12,
+    "effort_daN": 650,
+    "designation_plan": "ME tub 12m 650",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0097",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 12 X 800",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 12,
+    "effort_daN": 800,
+    "designation_plan": "ME tub 12m 800",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0098",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 12 X 1000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 12,
+    "effort_daN": 1000,
+    "designation_plan": "ME tub 12m 1000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0099",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 12 X 1250",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 12,
+    "effort_daN": 1250,
+    "designation_plan": "ME tub 12m 1250",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0100",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 12 X 1600",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 12,
+    "effort_daN": 1600,
+    "designation_plan": "ME tub 12m 1600",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0101",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 12 X 2000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 12,
+    "effort_daN": 2000,
+    "designation_plan": "ME tub 12m 2000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0102",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 12 X 2500",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 12,
+    "effort_daN": 2500,
+    "designation_plan": "ME tub 12m 2500",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0103",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 12 X 3200",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 12,
+    "effort_daN": 3200,
+    "designation_plan": "ME tub 12m 3200",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0104",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 12 X 4000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 12,
+    "effort_daN": 4000,
+    "designation_plan": "ME tub 12m 4000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0105",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 12 X 5000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 12,
+    "effort_daN": 5000,
+    "designation_plan": "ME tub 12m 5000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0106",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 13 X 500",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 13,
+    "effort_daN": 500,
+    "designation_plan": "ME tub 13m 500",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0107",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 13 X 650",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 13,
+    "effort_daN": 650,
+    "designation_plan": "ME tub 13m 650",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0108",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 13 X 800",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 13,
+    "effort_daN": 800,
+    "designation_plan": "ME tub 13m 800",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0109",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 13 X 1000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 13,
+    "effort_daN": 1000,
+    "designation_plan": "ME tub 13m 1000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0110",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 13 X 1250",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 13,
+    "effort_daN": 1250,
+    "designation_plan": "ME tub 13m 1250",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0111",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 13 X 1600",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 13,
+    "effort_daN": 1600,
+    "designation_plan": "ME tub 13m 1600",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0112",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 13 X 2000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 13,
+    "effort_daN": 2000,
+    "designation_plan": "ME tub 13m 2000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0113",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 13 X 2500",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 13,
+    "effort_daN": 2500,
+    "designation_plan": "ME tub 13m 2500",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0114",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 13 X 3200",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 13,
+    "effort_daN": 3200,
+    "designation_plan": "ME tub 13m 3200",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0115",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 13 X 4000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 13,
+    "effort_daN": 4000,
+    "designation_plan": "ME tub 13m 4000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0116",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 13 X 5000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 13,
+    "effort_daN": 5000,
+    "designation_plan": "ME tub 13m 5000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0117",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 14 X 500",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 14,
+    "effort_daN": 500,
+    "designation_plan": "ME tub 14m 500",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0118",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 14 X 650",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 14,
+    "effort_daN": 650,
+    "designation_plan": "ME tub 14m 650",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0119",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 14 X 800",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 14,
+    "effort_daN": 800,
+    "designation_plan": "ME tub 14m 800",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0120",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 14 X 1000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 14,
+    "effort_daN": 1000,
+    "designation_plan": "ME tub 14m 1000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0121",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 14 X 1250",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 14,
+    "effort_daN": 1250,
+    "designation_plan": "ME tub 14m 1250",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0122",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 14 X 1600",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 14,
+    "effort_daN": 1600,
+    "designation_plan": "ME tub 14m 1600",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0123",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 14 X 2000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 14,
+    "effort_daN": 2000,
+    "designation_plan": "ME tub 14m 2000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0124",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 14 X 2500",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 14,
+    "effort_daN": 2500,
+    "designation_plan": "ME tub 14m 2500",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0125",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 14 X 3200",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 14,
+    "effort_daN": 3200,
+    "designation_plan": "ME tub 14m 3200",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0126",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 14 X 4000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 14,
+    "effort_daN": 4000,
+    "designation_plan": "ME tub 14m 4000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0127",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 14 X 5000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 14,
+    "effort_daN": 5000,
+    "designation_plan": "ME tub 14m 5000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0128",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 16 X 500",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 16,
+    "effort_daN": 500,
+    "designation_plan": "ME tub 16m 500",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0129",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 16 X 650",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 16,
+    "effort_daN": 650,
+    "designation_plan": "ME tub 16m 650",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0130",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 16 X 800",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 16,
+    "effort_daN": 800,
+    "designation_plan": "ME tub 16m 800",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0131",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 16 X 1000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 16,
+    "effort_daN": 1000,
+    "designation_plan": "ME tub 16m 1000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0132",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 16 X 1250",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 16,
+    "effort_daN": 1250,
+    "designation_plan": "ME tub 16m 1250",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0133",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 16 X 1600",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 16,
+    "effort_daN": 1600,
+    "designation_plan": "ME tub 16m 1600",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0134",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 16 X 2000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 16,
+    "effort_daN": 2000,
+    "designation_plan": "ME tub 16m 2000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0135",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 16 X 2500",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 16,
+    "effort_daN": 2500,
+    "designation_plan": "ME tub 16m 2500",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0136",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 16 X 3200",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 16,
+    "effort_daN": 3200,
+    "designation_plan": "ME tub 16m 3200",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0137",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 16 X 4000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 16,
+    "effort_daN": 4000,
+    "designation_plan": "ME tub 16m 4000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0138",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 16 X 5000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 16,
+    "effort_daN": 5000,
+    "designation_plan": "ME tub 16m 5000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0139",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 18 X 500",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 18,
+    "effort_daN": 500,
+    "designation_plan": "ME tub 18m 500",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0140",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 18 X 650",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 18,
+    "effort_daN": 650,
+    "designation_plan": "ME tub 18m 650",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0141",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 18 X 800",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 18,
+    "effort_daN": 800,
+    "designation_plan": "ME tub 18m 800",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0142",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 18 X 1000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 18,
+    "effort_daN": 1000,
+    "designation_plan": "ME tub 18m 1000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0143",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 18 X 1250",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 18,
+    "effort_daN": 1250,
+    "designation_plan": "ME tub 18m 1250",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0144",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 18 X 1600",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 18,
+    "effort_daN": 1600,
+    "designation_plan": "ME tub 18m 1600",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0145",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 18 X 2000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 18,
+    "effort_daN": 2000,
+    "designation_plan": "ME tub 18m 2000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0146",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 18 X 2500",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 18,
+    "effort_daN": 2500,
+    "designation_plan": "ME tub 18m 2500",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0147",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 18 X 3200",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 18,
+    "effort_daN": 3200,
+    "designation_plan": "ME tub 18m 3200",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0148",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 18 X 4000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 18,
+    "effort_daN": 4000,
+    "designation_plan": "ME tub 18m 4000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0149",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 18 X 5000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 18,
+    "effort_daN": 5000,
+    "designation_plan": "ME tub 18m 5000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0150",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 20 X 800",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 20,
+    "effort_daN": 800,
+    "designation_plan": "ME tub 20m 800",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0151",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 20 X 1000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 20,
+    "effort_daN": 1000,
+    "designation_plan": "ME tub 20m 1000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0152",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 20 X 1250",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 20,
+    "effort_daN": 1250,
+    "designation_plan": "ME tub 20m 1250",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0153",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 20 X 1600",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 20,
+    "effort_daN": 1600,
+    "designation_plan": "ME tub 20m 1600",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0154",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 20 X 2000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 20,
+    "effort_daN": 2000,
+    "designation_plan": "ME tub 20m 2000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0155",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 20 X 2500",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 20,
+    "effort_daN": 2500,
+    "designation_plan": "ME tub 20m 2500",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0156",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 20 X 3200",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 20,
+    "effort_daN": 3200,
+    "designation_plan": "ME tub 20m 3200",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0157",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 20 X 4000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 20,
+    "effort_daN": 4000,
+    "designation_plan": "ME tub 20m 4000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0158",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 20 X 5000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 20,
+    "effort_daN": 5000,
+    "designation_plan": "ME tub 20m 5000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0159",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 22 X 600",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 22,
+    "effort_daN": 600,
+    "designation_plan": "ME tub 22m 600",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0160",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 22 X 1000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 22,
+    "effort_daN": 1000,
+    "designation_plan": "ME tub 22m 1000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0161",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 22 X 1250",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 22,
+    "effort_daN": 1250,
+    "designation_plan": "ME tub 22m 1250",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0162",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 22 X 1600",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 22,
+    "effort_daN": 1600,
+    "designation_plan": "ME tub 22m 1600",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0163",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 22 X 2000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 22,
+    "effort_daN": 2000,
+    "designation_plan": "ME tub 22m 2000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0164",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 22 X 2500",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 22,
+    "effort_daN": 2500,
+    "designation_plan": "ME tub 22m 2500",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0165",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 22 X 3200",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 22,
+    "effort_daN": 3200,
+    "designation_plan": "ME tub 22m 3200",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0166",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 22 X 4000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 22,
+    "effort_daN": 4000,
+    "designation_plan": "ME tub 22m 4000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0167",
+   "categorie": "SUPPORT",
+   "sous_categorie": "METALLIQUE_ME",
+   "libelle": "Support Métallique ME 22 X 5000",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "materiau": "ME_TUB",
+    "hauteur_m": 22,
+    "effort_daN": 5000,
+    "designation_plan": "ME tub 22m 5000",
+    "symbole": "ANNEAU"
+   }
+  },
+  {
+   "id": "a0168",
+   "categorie": "SUPPORT",
+   "sous_categorie": "RENFORCEMENT_ACCESSOIRE",
+   "libelle": "Jumelage poteaux bois (massif béton compris)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0169",
+   "categorie": "SUPPORT",
+   "sous_categorie": "RENFORCEMENT_ACCESSOIRE",
+   "libelle": "Jumelage poteaux béton (massif béton compris)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0170",
+   "categorie": "SUPPORT",
+   "sous_categorie": "RENFORCEMENT_ACCESSOIRE",
+   "libelle": "Contrefichage de poteau (semelles métalliques + clefs)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0171",
+   "categorie": "SUPPORT",
+   "sous_categorie": "RENFORCEMENT_ACCESSOIRE",
+   "libelle": "Haubanage bois ou béton (massif béton, fouilles comprises)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0172",
+   "categorie": "SUPPORT",
+   "sous_categorie": "RENFORCEMENT_ACCESSOIRE",
+   "libelle": "Montage en chevron (par chevron)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0173",
+   "categorie": "SUPPORT",
+   "sous_categorie": "RENFORCEMENT_ACCESSOIRE",
+   "libelle": "Portique support bois",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0174",
+   "categorie": "SUPPORT",
+   "sous_categorie": "RENFORCEMENT_ACCESSOIRE",
+   "libelle": "Portique support béton et Petit Jean",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0175",
+   "categorie": "SUPPORT",
+   "sous_categorie": "RENFORCEMENT_ACCESSOIRE",
+   "libelle": "Portique pylône métallique",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0176",
+   "categorie": "SUPPORT",
+   "sous_categorie": "RENFORCEMENT_ACCESSOIRE",
+   "libelle": "Assemblage de deux éléments de support Petit Jean",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0177",
+   "categorie": "SUPPORT",
+   "sous_categorie": "RENFORCEMENT_ACCESSOIRE",
+   "libelle": "Levage à la main (lieu inaccessible)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0178",
+   "categorie": "SUPPORT",
+   "sous_categorie": "RENFORCEMENT_ACCESSOIRE",
+   "libelle": "Numérotage de support par plaque inoxydable",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0179",
+   "categorie": "SUPPORT",
+   "sous_categorie": "RENFORCEMENT_ACCESSOIRE",
+   "libelle": "Plaque « danger de mort » sur support existant HT",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0180",
+   "categorie": "SUPPORT",
+   "sous_categorie": "RENFORCEMENT_ACCESSOIRE",
+   "libelle": "Dispositif avertisseur rouge sur support mixte HTA/BTA",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0181",
+   "categorie": "SUPPORT",
+   "sous_categorie": "FOUILLE_FONDATION",
+   "libelle": "Massif de fondation",
+   "unite": "M3",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0182",
+   "categorie": "SUPPORT",
+   "sous_categorie": "FOUILLE_FONDATION",
+   "libelle": "Fouille en terrain de toute nature",
+   "unite": "M3",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0183",
+   "categorie": "SUPPORT",
+   "sous_categorie": "FOUILLE_FONDATION",
+   "libelle": "PV rocher à l'explosif",
+   "unite": "M3",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0184",
+   "categorie": "SUPPORT",
+   "sous_categorie": "FOUILLE_FONDATION",
+   "libelle": "PV rocher au compresseur",
+   "unite": "M3",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0185",
+   "categorie": "SUPPORT",
+   "sous_categorie": "FOUILLE_FONDATION",
+   "libelle": "Pré-busage de support",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0186",
+   "categorie": "ARMEMENT_BT",
+   "sous_categorie": "LIGNE_TENDUE_SUPPORT",
+   "libelle": "Ensemble de suspension ES 1500 (ES 54-14)",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "sigle": "ES",
+    "neutre_porteur": 54.6
+   }
+  },
+  {
+   "id": "a0187",
+   "categorie": "ARMEMENT_BT",
+   "sous_categorie": "LIGNE_TENDUE_SUPPORT",
+   "libelle": "Ensemble de suspension ES 2000 (ES 70-14)",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "sigle": "ES",
+    "neutre_porteur": 70
+   }
+  },
+  {
+   "id": "a0188",
+   "categorie": "ARMEMENT_BT",
+   "sous_categorie": "LIGNE_TENDUE_SUPPORT",
+   "libelle": "Ensemble d'ancrage simple EAS 70-10",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "sigle": "EAS",
+    "neutre_porteur": 70
+   }
+  },
+  {
+   "id": "a0189",
+   "categorie": "ARMEMENT_BT",
+   "sous_categorie": "LIGNE_TENDUE_SUPPORT",
+   "libelle": "Ensemble d'ancrage simple EAS 54-10",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "sigle": "EAS",
+    "neutre_porteur": 54.6
+   }
+  },
+  {
+   "id": "a0190",
+   "categorie": "ARMEMENT_BT",
+   "sous_categorie": "LIGNE_TENDUE_SUPPORT",
+   "libelle": "Ensemble d'ancrage double EADS 70-10",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "sigle": "EADS",
+    "neutre_porteur": 70
+   }
+  },
+  {
+   "id": "a0191",
+   "categorie": "ARMEMENT_BT",
+   "sous_categorie": "LIGNE_TENDUE_SUPPORT",
+   "libelle": "Ensemble d'ancrage double EADS 54-10",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "sigle": "EADS",
+    "neutre_porteur": 54.6
+   }
+  },
+  {
+   "id": "a0192",
+   "categorie": "ARMEMENT_BT",
+   "sous_categorie": "LIGNE_TENDUE_SUPPORT",
+   "libelle": "Pose ferrure PTT (bande avertisseuse jaune + plaquette)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0193",
+   "categorie": "ARMEMENT_BT",
+   "sous_categorie": "LIGNE_TENDUE_SUPPORT",
+   "libelle": "Bras de départ orientable type BT-H 61 pour BA",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0194",
+   "categorie": "ARMEMENT_BT",
+   "sous_categorie": "FACADE",
+   "libelle": "Ensemble de soutien de faisceau type BRTF (tous les 5 m)",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "sigle": "BRTF"
+   }
+  },
+  {
+   "id": "a0195",
+   "categorie": "ARMEMENT_BT",
+   "sous_categorie": "FACADE",
+   "libelle": "Ensemble d'ancrage simple type EAF",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "sigle": "EAF"
+   }
+  },
+  {
+   "id": "a0196",
+   "categorie": "ARMEMENT_BT",
+   "sous_categorie": "FACADE",
+   "libelle": "Ensemble d'ancrage double type EADF",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "sigle": "EADF"
+   }
+  },
+  {
+   "id": "a0197",
+   "categorie": "ARMEMENT_BT",
+   "sous_categorie": "ACCESSOIRE_AERIEN",
+   "libelle": "Capuchon d'extrémité thermorétractable",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0198",
+   "categorie": "ARMEMENT_BT",
+   "sous_categorie": "ACCESSOIRE_AERIEN",
+   "libelle": "Connecteurs de mise en court-circuit d'un faisceau torsadé",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0199",
+   "categorie": "ARMEMENT_BT",
+   "sous_categorie": "ACCESSOIRE_AERIEN",
+   "libelle": "Protection de fenêtre (ML)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0200",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "FERRURE_POUTRE",
+   "libelle": "Ferrure BI 70 320 (n.66 241)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0201",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "FERRURE_POUTRE",
+   "libelle": "Ferrure BT 70 150 (n.66 422)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0202",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "FERRURE_POUTRE",
+   "libelle": "Ferrure BP 70 680 (n.66 423)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0203",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "FERRURE_POUTRE",
+   "libelle": "Ferrure TR 25 200-80 (n.66 412)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0204",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "FERRURE_POUTRE",
+   "libelle": "Ferrure DITR",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0205",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "FERRURE_POUTRE",
+   "libelle": "Ferrure BIS 60 (NF 66 425)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0206",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "FERRURE_POUTRE",
+   "libelle": "Ferrure BIS 70 (NF 66 425)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0207",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "FERRURE_POUTRE",
+   "libelle": "Ferrure BIS 80 (NF 66 425)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0208",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "FERRURE_POUTRE",
+   "libelle": "Ferrure VR 1 50/60",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0209",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "FERRURE_POUTRE",
+   "libelle": "Ferrure VR 2 70/90",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0210",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_ARMEMENT",
+   "libelle": "Nappe type U, simple accrochage",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "note": "Efforts déclinés de 4000 à 6300 daN et au-delà selon le type."
+   }
+  },
+  {
+   "id": "a0211",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_ARMEMENT",
+   "libelle": "Triangle type U, simple accrochage",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "note": "Efforts déclinés de 4000 à 6300 daN et au-delà selon le type."
+   }
+  },
+  {
+   "id": "a0212",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_ARMEMENT",
+   "libelle": "Nappe type Z, double accrochage",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "note": "Efforts déclinés de 4000 à 6300 daN et au-delà selon le type."
+   }
+  },
+  {
+   "id": "a0213",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_ARMEMENT",
+   "libelle": "Triangle type Z, double accrochage",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "note": "Efforts déclinés de 4000 à 6300 daN et au-delà selon le type."
+   }
+  },
+  {
+   "id": "a0214",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_ARMEMENT",
+   "libelle": "Nappe type Y simple",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "note": "Efforts déclinés de 4000 à 6300 daN et au-delà selon le type."
+   }
+  },
+  {
+   "id": "a0215",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_ARMEMENT",
+   "libelle": "Nappe type Y double",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "note": "Efforts déclinés de 4000 à 6300 daN et au-delà selon le type."
+   }
+  },
+  {
+   "id": "a0216",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_ARMEMENT",
+   "libelle": "Triangle type Y arrêt/ancrage simple",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "note": "Efforts déclinés de 4000 à 6300 daN et au-delà selon le type."
+   }
+  },
+  {
+   "id": "a0217",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_ARMEMENT",
+   "libelle": "Triangle type Y arrêt/ancrage double",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "note": "Efforts déclinés de 4000 à 6300 daN et au-delà selon le type."
+   }
+  },
+  {
+   "id": "a0218",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_ARMEMENT",
+   "libelle": "Nappe type X arrêt/ancrage simple",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "note": "Efforts déclinés de 4000 à 6300 daN et au-delà selon le type."
+   }
+  },
+  {
+   "id": "a0219",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_ARMEMENT",
+   "libelle": "Nappe type X arrêt/ancrage double",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "note": "Efforts déclinés de 4000 à 6300 daN et au-delà selon le type."
+   }
+  },
+  {
+   "id": "a0220",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_ARMEMENT",
+   "libelle": "Triangle type X arrêt/ancrage simple",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "note": "Efforts déclinés de 4000 à 6300 daN et au-delà selon le type."
+   }
+  },
+  {
+   "id": "a0221",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_ARMEMENT",
+   "libelle": "Triangle type X arrêt/ancrage double",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "note": "Efforts déclinés de 4000 à 6300 daN et au-delà selon le type."
+   }
+  },
+  {
+   "id": "a0222",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_ARMEMENT",
+   "libelle": "Armement suspendu",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "note": "Efforts déclinés de 4000 à 6300 daN et au-delà selon le type."
+   }
+  },
+  {
+   "id": "a0223",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_VOUTE",
+   "libelle": "Nappe voûte NV1 50/50",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0224",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_VOUTE",
+   "libelle": "Nappe voûte NV2 50/50",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0225",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_VOUTE",
+   "libelle": "Nappe voûte NV1 50/60",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0226",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_VOUTE",
+   "libelle": "Nappe voûte NV2 50/60",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0227",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_VOUTE",
+   "libelle": "Nappe voûte NV1 50/70",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0228",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_VOUTE",
+   "libelle": "Nappe voûte NV2 50/70",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0229",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_VOUTE",
+   "libelle": "Nappe voûte NV1 50/80",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0230",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_VOUTE",
+   "libelle": "Nappe voûte NV2 50/80",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0231",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_VOUTE",
+   "libelle": "Nappe voûte NV1 60/50",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0232",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_VOUTE",
+   "libelle": "Nappe voûte NV2 60/50",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0233",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_VOUTE",
+   "libelle": "Nappe voûte NV1 60/60",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0234",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_VOUTE",
+   "libelle": "Nappe voûte NV2 60/60",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0235",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_VOUTE",
+   "libelle": "Nappe voûte NV1 60/70",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0236",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_VOUTE",
+   "libelle": "Nappe voûte NV2 60/70",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0237",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_VOUTE",
+   "libelle": "Nappe voûte NV1 60/80",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0238",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_VOUTE",
+   "libelle": "Nappe voûte NV2 60/80",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0239",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_VOUTE",
+   "libelle": "Nappe voûte NV1 70/50",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0240",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_VOUTE",
+   "libelle": "Nappe voûte NV2 70/50",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0241",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_VOUTE",
+   "libelle": "Nappe voûte NV1 70/60",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0242",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_VOUTE",
+   "libelle": "Nappe voûte NV2 70/60",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0243",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_VOUTE",
+   "libelle": "Nappe voûte NV1 70/70",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0244",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_VOUTE",
+   "libelle": "Nappe voûte NV2 70/70",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0245",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_VOUTE",
+   "libelle": "Nappe voûte NV1 70/80",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0246",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_VOUTE",
+   "libelle": "Nappe voûte NV2 70/80",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0247",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_VOUTE",
+   "libelle": "Nappe voûte NV1 80/50",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0248",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_VOUTE",
+   "libelle": "Nappe voûte NV2 80/50",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0249",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_VOUTE",
+   "libelle": "Nappe voûte NV1 80/60",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0250",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_VOUTE",
+   "libelle": "Nappe voûte NV2 80/60",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0251",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_VOUTE",
+   "libelle": "Nappe voûte NV1 80/70",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0252",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_VOUTE",
+   "libelle": "Nappe voûte NV2 80/70",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0253",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_VOUTE",
+   "libelle": "Nappe voûte NV1 80/80",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0254",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "NAPPE_VOUTE",
+   "libelle": "Nappe voûte NV2 80/80",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0255",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "COLLIER",
+   "libelle": "Collier CNV 180-220 (poteau simple)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0256",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "COLLIER",
+   "libelle": "Collier CNV J1 (poteaux jumelés)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0257",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "COLLIER",
+   "libelle": "Collier CA 120-200/240 (chevrons et croisillons)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0258",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "ISOLATEUR",
+   "libelle": "Isolateur rigide",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0259",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "ISOLATEUR",
+   "libelle": "Chaîne d'isolateurs norme 11",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0260",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "ISOLATEUR",
+   "libelle": "Chaîne d'isolateurs norme 16",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0261",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "ISOLATEUR",
+   "libelle": "Chaîne d'ancrage 2 éléments avec éclateurs et dispositif anti-oiseaux",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0262",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "PROTECTION",
+   "libelle": "Parafoudre",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0263",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "PROTECTION",
+   "libelle": "Limitor",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0264",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "PROTECTION",
+   "libelle": "Parafoudre + limitor",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0265",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "PROTECTION",
+   "libelle": "Chaîne Armourlite",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0266",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "PROTECTION",
+   "libelle": "KIT ERAS : parafoudre ERAS + barre de connexion + ferrure + EZED24",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0267",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "PROTECTION",
+   "libelle": "Lot P 24 RAS avec parafoudres existants : limitor + kit P24 + ferrures + barre de connexion",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0268",
+   "categorie": "ARMEMENT_HTA",
+   "sous_categorie": "PROTECTION",
+   "libelle": "Lot P 24 RAS zone III : parafoudre P24 + limitor + ferrure + EZED24 + barre (P24E KIT)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0269",
+   "categorie": "CABLE",
+   "sous_categorie": "BTA_AERIEN_TORSADE",
+   "libelle": "Câble torsadé autoporté 3 x 35 + 54,6 Alu",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "BTS",
+    "pose": "aerien",
+    "section": "3 x 35 + 54,6 Alu",
+    "norme": "NF C 33-209",
+    "neutre_porteur": 54.6
+   }
+  },
+  {
+   "id": "a0270",
+   "categorie": "CABLE",
+   "sous_categorie": "BTA_AERIEN_TORSADE",
+   "libelle": "Câble torsadé autoporté 3 x 70 + 54,6",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "BTS",
+    "pose": "aerien",
+    "section": "3 x 70 + 54,6",
+    "norme": "NF C 33-209",
+    "neutre_porteur": 54.6
+   }
+  },
+  {
+   "id": "a0271",
+   "categorie": "CABLE",
+   "sous_categorie": "BTA_AERIEN_TORSADE",
+   "libelle": "Câble torsadé autoporté 3 x 70 + 54,6 + 2 x 16",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "BTS",
+    "pose": "aerien",
+    "section": "3 x 70 + 54,6 + 2 x 16",
+    "norme": "NF C 33-209",
+    "neutre_porteur": 54.6,
+    "note": "Le « + 2 x 16 » correspond aux conducteurs d'éclairage public intégrés au faisceau."
+   }
+  },
+  {
+   "id": "a0272",
+   "categorie": "CABLE",
+   "sous_categorie": "BTA_AERIEN_TORSADE",
+   "libelle": "Câble torsadé autoporté 3 x 70 + 70",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "BTS",
+    "pose": "aerien",
+    "section": "3 x 70 + 70",
+    "norme": "NF C 33-209",
+    "neutre_porteur": 70
+   }
+  },
+  {
+   "id": "a0273",
+   "categorie": "CABLE",
+   "sous_categorie": "BTA_AERIEN_TORSADE",
+   "libelle": "Câble torsadé autoporté 3 x 70 + 70 + 2 x 16",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "BTS",
+    "pose": "aerien",
+    "section": "3 x 70 + 70 + 2 x 16",
+    "norme": "NF C 33-209",
+    "neutre_porteur": 70,
+    "note": "Le « + 2 x 16 » correspond aux conducteurs d'éclairage public intégrés au faisceau."
+   }
+  },
+  {
+   "id": "a0274",
+   "categorie": "CABLE",
+   "sous_categorie": "BTA_AERIEN_TORSADE",
+   "libelle": "Câble torsadé autoporté 3 x 150 + 70",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "BTS",
+    "pose": "aerien",
+    "section": "3 x 150 + 70",
+    "norme": "NF C 33-209",
+    "neutre_porteur": 70
+   }
+  },
+  {
+   "id": "a0275",
+   "categorie": "CABLE",
+   "sous_categorie": "BTA_AERIEN_TORSADE",
+   "libelle": "Câble torsadé autoporté 3 x 150 + 70 + 2 x 16",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "BTS",
+    "pose": "aerien",
+    "section": "3 x 150 + 70 + 2 x 16",
+    "norme": "NF C 33-209",
+    "neutre_porteur": 70,
+    "note": "Le « + 2 x 16 » correspond aux conducteurs d'éclairage public intégrés au faisceau."
+   }
+  },
+  {
+   "id": "a0276",
+   "categorie": "CABLE",
+   "sous_categorie": "BRANCHEMENT_AERIEN",
+   "libelle": "Câble de branchement torsadé PCR 2 x 25",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "BRT",
+    "pose": "aerien",
+    "section": "2 x 25"
+   }
+  },
+  {
+   "id": "a0277",
+   "categorie": "CABLE",
+   "sous_categorie": "BRANCHEMENT_AERIEN",
+   "libelle": "Câble de branchement torsadé PCR 4 x 25",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "BRT",
+    "pose": "aerien",
+    "section": "4 x 25"
+   }
+  },
+  {
+   "id": "a0278",
+   "categorie": "CABLE",
+   "sous_categorie": "BRANCHEMENT_AERIEN",
+   "libelle": "Câble de branchement torsadé PCR 2 x 16",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "BRT",
+    "pose": "aerien",
+    "section": "2 x 16"
+   }
+  },
+  {
+   "id": "a0279",
+   "categorie": "CABLE",
+   "sous_categorie": "BRANCHEMENT_POSE_RACCORDEMENT",
+   "libelle": "Pose de branchement tendu",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "BRT"
+   }
+  },
+  {
+   "id": "a0280",
+   "categorie": "CABLE",
+   "sous_categorie": "BRANCHEMENT_POSE_RACCORDEMENT",
+   "libelle": "Pose de branchement par chevilles tous les 50 cm",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "BRT"
+   }
+  },
+  {
+   "id": "a0281",
+   "categorie": "CABLE",
+   "sous_categorie": "BRANCHEMENT_POSE_RACCORDEMENT",
+   "libelle": "Percement de maçonnerie ép. 0,25 m",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "BRT"
+   }
+  },
+  {
+   "id": "a0282",
+   "categorie": "CABLE",
+   "sous_categorie": "BRANCHEMENT_POSE_RACCORDEMENT",
+   "libelle": "Percement de maçonnerie ép. 0,50 m",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "BRT"
+   }
+  },
+  {
+   "id": "a0283",
+   "categorie": "CABLE",
+   "sous_categorie": "BRANCHEMENT_POSE_RACCORDEMENT",
+   "libelle": "Percement de maçonnerie ép. 1,00 m",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "BRT"
+   }
+  },
+  {
+   "id": "a0284",
+   "categorie": "CABLE",
+   "sous_categorie": "BRANCHEMENT_POSE_RACCORDEMENT",
+   "libelle": "Manchon de jonction 2 fils",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "BRT"
+   }
+  },
+  {
+   "id": "a0285",
+   "categorie": "CABLE",
+   "sous_categorie": "BRANCHEMENT_POSE_RACCORDEMENT",
+   "libelle": "Manchon de jonction 4 fils",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "BRT"
+   }
+  },
+  {
+   "id": "a0286",
+   "categorie": "CABLE",
+   "sous_categorie": "BRANCHEMENT_POSE_RACCORDEMENT",
+   "libelle": "Ancrage de branchement (queue de cochon + pince)",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "BRT"
+   }
+  },
+  {
+   "id": "a0287",
+   "categorie": "CABLE",
+   "sous_categorie": "BRANCHEMENT_POSE_RACCORDEMENT",
+   "libelle": "Raccordement 2 fils sur réseau nu",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "BRT"
+   }
+  },
+  {
+   "id": "a0288",
+   "categorie": "CABLE",
+   "sous_categorie": "BRANCHEMENT_POSE_RACCORDEMENT",
+   "libelle": "Raccordement 4 fils",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "BRT"
+   }
+  },
+  {
+   "id": "a0289",
+   "categorie": "CABLE",
+   "sous_categorie": "BRANCHEMENT_POSE_RACCORDEMENT",
+   "libelle": "Coffret de regroupement de branchements sur façade",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "BRT"
+   }
+  },
+  {
+   "id": "a0290",
+   "categorie": "CABLE",
+   "sous_categorie": "BTA_SOUTERRAIN",
+   "libelle": "Câble souterrain BTA 3 X 50 + 50 mm²",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "BTS",
+    "pose": "souterrain",
+    "section": "3 X 50 + 50 mm²",
+    "norme": "HN 33 S 33"
+   }
+  },
+  {
+   "id": "a0291",
+   "categorie": "CABLE",
+   "sous_categorie": "BTA_SOUTERRAIN",
+   "libelle": "Câble souterrain BTA 3 X 95 + 50 mm²",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "BTS",
+    "pose": "souterrain",
+    "section": "3 X 95 + 50 mm²",
+    "norme": "HN 33 S 33"
+   }
+  },
+  {
+   "id": "a0292",
+   "categorie": "CABLE",
+   "sous_categorie": "BTA_SOUTERRAIN",
+   "libelle": "Câble souterrain BTA 3 X 150 + 70 mm² ou 3 x 150 + 95 mm²",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "BTS",
+    "pose": "souterrain",
+    "section": "3 X 150 + 70 mm² ou 3 x 150 + 95 mm²",
+    "norme": "HN 33 S 33"
+   }
+  },
+  {
+   "id": "a0293",
+   "categorie": "CABLE",
+   "sous_categorie": "BTA_SOUTERRAIN",
+   "libelle": "Câble souterrain BTA 3 X 240 + 95 mm² ou 3 x 240 + 115 mm²",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "BTS",
+    "pose": "souterrain",
+    "section": "3 X 240 + 95 mm² ou 3 x 240 + 115 mm²",
+    "norme": "HN 33 S 33"
+   }
+  },
+  {
+   "id": "a0294",
+   "categorie": "CABLE",
+   "sous_categorie": "BRANCHEMENT_SOUTERRAIN",
+   "libelle": "Câble de branchement 4 X 25 mm² massif",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "BRT",
+    "pose": "souterrain",
+    "section": "4 x 25"
+   }
+  },
+  {
+   "id": "a0295",
+   "categorie": "CABLE",
+   "sous_categorie": "BRANCHEMENT_SOUTERRAIN",
+   "libelle": "Câble de branchement 4 X 35 mm² massif",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "BRT",
+    "pose": "souterrain",
+    "section": "4 x 35",
+    "note": "Notation de plan retenue : « 4x35 TPC ∅ 90 »."
+   }
+  },
+  {
+   "id": "a0296",
+   "categorie": "CABLE",
+   "sous_categorie": "U1000_R2V_CUIVRE",
+   "libelle": "Câble U1000 R2V 3 X 6",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "nature": "CUIVRE"
+   }
+  },
+  {
+   "id": "a0297",
+   "categorie": "CABLE",
+   "sous_categorie": "U1000_R2V_CUIVRE",
+   "libelle": "Câble U1000 R2V 5 X 6",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "nature": "CUIVRE"
+   }
+  },
+  {
+   "id": "a0298",
+   "categorie": "CABLE",
+   "sous_categorie": "U1000_R2V_CUIVRE",
+   "libelle": "Câble U1000 R2V 3 X 10",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "nature": "CUIVRE"
+   }
+  },
+  {
+   "id": "a0299",
+   "categorie": "CABLE",
+   "sous_categorie": "U1000_R2V_CUIVRE",
+   "libelle": "Câble U1000 R2V 5 X 10",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "nature": "CUIVRE"
+   }
+  },
+  {
+   "id": "a0300",
+   "categorie": "CABLE",
+   "sous_categorie": "U1000_R2V_CUIVRE",
+   "libelle": "Câble U1000 R2V 3 X 16",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "nature": "CUIVRE"
+   }
+  },
+  {
+   "id": "a0301",
+   "categorie": "CABLE",
+   "sous_categorie": "U1000_R2V_CUIVRE",
+   "libelle": "Câble U1000 R2V 4 X 25 mm² cuivre",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "nature": "CUIVRE"
+   }
+  },
+  {
+   "id": "a0302",
+   "categorie": "CABLE",
+   "sous_categorie": "U1000_R2V_CUIVRE",
+   "libelle": "Câble U1000 R2V Câble armé téléreport",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "nature": "CUIVRE"
+   }
+  },
+  {
+   "id": "a0303",
+   "categorie": "CABLE",
+   "sous_categorie": "HTA_AERIEN",
+   "libelle": "Almélec 54,6 mm² (Aster, 149 g/ml)",
+   "unite": "KG",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "HTA",
+    "pose": "aerien",
+    "section": "54,6",
+    "nature": "ALMELEC"
+   }
+  },
+  {
+   "id": "a0304",
+   "categorie": "CABLE",
+   "sous_categorie": "HTA_AERIEN",
+   "libelle": "Almélec-acier 59,7 (Phlox, 276 g/ml)",
+   "unite": "KG",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "HTA",
+    "pose": "aerien",
+    "section": "59,7",
+    "nature": "ALMELEC_ACIER"
+   }
+  },
+  {
+   "id": "a0305",
+   "categorie": "CABLE",
+   "sous_categorie": "HTA_AERIEN_TIRAGE",
+   "libelle": "Tirage 54,6 sur isolateur rigide — hors agglomération",
+   "unite": "KM",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "HTA",
+    "pose": "aerien"
+   }
+  },
+  {
+   "id": "a0306",
+   "categorie": "CABLE",
+   "sous_categorie": "HTA_AERIEN_TIRAGE",
+   "libelle": "Tirage 54,6 sur isolateur rigide — en agglomération",
+   "unite": "KM",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "HTA",
+    "pose": "aerien"
+   }
+  },
+  {
+   "id": "a0307",
+   "categorie": "CABLE",
+   "sous_categorie": "HTA_AERIEN_TIRAGE",
+   "libelle": "Tirage 59,7 sur isolateur rigide — hors agglomération",
+   "unite": "KM",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "HTA",
+    "pose": "aerien"
+   }
+  },
+  {
+   "id": "a0308",
+   "categorie": "CABLE",
+   "sous_categorie": "HTA_AERIEN_TIRAGE",
+   "libelle": "Tirage 59,7 sur isolateur rigide — en agglomération",
+   "unite": "KM",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "HTA",
+    "pose": "aerien"
+   }
+  },
+  {
+   "id": "a0309",
+   "categorie": "CABLE",
+   "sous_categorie": "HTA_AERIEN_TIRAGE",
+   "libelle": "Tirage 54,6 sur isolateur suspendu — hors agglomération",
+   "unite": "KM",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "HTA",
+    "pose": "aerien"
+   }
+  },
+  {
+   "id": "a0310",
+   "categorie": "CABLE",
+   "sous_categorie": "HTA_AERIEN_TIRAGE",
+   "libelle": "Tirage 54,6 sur isolateur suspendu — en agglomération",
+   "unite": "KM",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "HTA",
+    "pose": "aerien"
+   }
+  },
+  {
+   "id": "a0311",
+   "categorie": "CABLE",
+   "sous_categorie": "HTA_AERIEN_TIRAGE",
+   "libelle": "Tirage 59,7 sur isolateur suspendu — hors agglomération",
+   "unite": "KM",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "HTA",
+    "pose": "aerien"
+   }
+  },
+  {
+   "id": "a0312",
+   "categorie": "CABLE",
+   "sous_categorie": "HTA_AERIEN_TIRAGE",
+   "libelle": "Tirage 59,7 sur isolateur suspendu — en agglomération",
+   "unite": "KM",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "HTA",
+    "pose": "aerien"
+   }
+  },
+  {
+   "id": "a0313",
+   "categorie": "CABLE",
+   "sous_categorie": "HTA_AERIEN_TIRAGE",
+   "libelle": "Tirage almélec 117 mm² — hors agglomération",
+   "unite": "KM",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "HTA",
+    "pose": "aerien"
+   }
+  },
+  {
+   "id": "a0314",
+   "categorie": "CABLE",
+   "sous_categorie": "HTA_AERIEN_TIRAGE",
+   "libelle": "Tirage almélec 117 mm² — en agglomération",
+   "unite": "KM",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "HTA",
+    "pose": "aerien"
+   }
+  },
+  {
+   "id": "a0315",
+   "categorie": "CABLE",
+   "sous_categorie": "HTA_AERIEN_TIRAGE",
+   "libelle": "Tirage almélec 148 mm² — hors agglomération",
+   "unite": "KM",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "HTA",
+    "pose": "aerien"
+   }
+  },
+  {
+   "id": "a0316",
+   "categorie": "CABLE",
+   "sous_categorie": "HTA_AERIEN_TIRAGE",
+   "libelle": "Tirage almélec 148 mm² — en agglomération",
+   "unite": "KM",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "HTA",
+    "pose": "aerien"
+   }
+  },
+  {
+   "id": "a0317",
+   "categorie": "CABLE",
+   "sous_categorie": "HTA_SOUTERRAIN",
+   "libelle": "Câble souterrain HTA ALU 12/20 (24) kV 3 X 95 — 3x1x95²",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "HTA",
+    "pose": "souterrain",
+    "section": "3 X 95 — 3x1x95²",
+    "norme": "HN 33 S 23 / C 33-226",
+    "note": "⚠ Codes 4-448 / 4-449 réutilisés pour les boîtes de jonction HTA : lever l'ambiguïté par le libellé, jamais par le code seul."
+   }
+  },
+  {
+   "id": "a0318",
+   "categorie": "CABLE",
+   "sous_categorie": "HTA_SOUTERRAIN",
+   "libelle": "Câble souterrain HTA ALU 12/20 (24) kV 3 X 150 — 3x1x150²",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "HTA",
+    "pose": "souterrain",
+    "section": "3 X 150 — 3x1x150²",
+    "norme": "HN 33 S 23 / C 33-226",
+    "note": "⚠ Codes 4-448 / 4-449 réutilisés pour les boîtes de jonction HTA : lever l'ambiguïté par le libellé, jamais par le code seul."
+   }
+  },
+  {
+   "id": "a0319",
+   "categorie": "CABLE",
+   "sous_categorie": "HTA_SOUTERRAIN",
+   "libelle": "Câble souterrain HTA ALU 12/20 (24) kV 3 X 240 — 3x1x240²",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "HTA",
+    "pose": "souterrain",
+    "section": "3 X 240 — 3x1x240²",
+    "norme": "HN 33 S 23 / C 33-226",
+    "note": "⚠ Codes 4-448 / 4-449 réutilisés pour les boîtes de jonction HTA : lever l'ambiguïté par le libellé, jamais par le code seul."
+   }
+  },
+  {
+   "id": "a0320",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "REMBT",
+   "libelle": "Borne REMBT 300 (67.72.019)",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "dimensions": "1000 x 350 x 195 mm",
+    "nb_plages": 6,
+    "sigle": "RM300",
+    "malt_obligatoire": true
+   }
+  },
+  {
+   "id": "a0321",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "REMBT",
+   "libelle": "Borne REMBT 300 (67.72.011)",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "dimensions": "770 x 350 x 195 mm",
+    "nb_plages": 6,
+    "sigle": "RM300",
+    "malt_obligatoire": true
+   }
+  },
+  {
+   "id": "a0322",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "REMBT",
+   "libelle": "Borne REMBT 450 (67.72.021)",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "dimensions": "1000 x 530 x 195 mm",
+    "nb_plages": 9,
+    "sigle": "RM450",
+    "malt_obligatoire": true
+   }
+  },
+  {
+   "id": "a0323",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "REMBT",
+   "libelle": "Borne REMBT 600 (67.72.029)",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "dimensions": "1000 x 700 x 195 mm",
+    "nb_plages": 12,
+    "sigle": "RM600",
+    "malt_obligatoire": true
+   }
+  },
+  {
+   "id": "a0324",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "REMBT_SUPPORT_BARRES",
+   "libelle": "Support barres G3 6 plages (67.70.112)",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "nb_plages": 6
+   }
+  },
+  {
+   "id": "a0325",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "REMBT_SUPPORT_BARRES",
+   "libelle": "Support barres G3 9 plages (67.70.122)",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "nb_plages": 9
+   }
+  },
+  {
+   "id": "a0326",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "REMBT_SUPPORT_BARRES",
+   "libelle": "Support barres G3 12 plages (67.70.132)",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "nb_plages": 12
+   }
+  },
+  {
+   "id": "a0327",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "REMBT_MODULE",
+   "libelle": "Module RAC 240 G3 — réseau, câble 50 à 240 mm²",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0328",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "REMBT_MODULE",
+   "libelle": "Module RAC 35 G3 — branchement, câble 35 mm²",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0329",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "REMBT_MODULE",
+   "libelle": "Module BR 60M G3 — branchement protégé, fusible mono ou tri, 60 A",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0330",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "REMBT_MODULE",
+   "libelle": "Module RCP 400 — coupure 400 A / protection 200 A",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0331",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "REMBT_MODULE",
+   "libelle": "Jeu de 4 plots de repos PR 240 G3 (67.71.710)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0332",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "COFFRET",
+   "libelle": "Coffret de branchement S 20 avec platine (69.80.130 + 69.80.132)",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "sigle": "S20"
+   }
+  },
+  {
+   "id": "a0333",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "COFFRET",
+   "libelle": "Borne Cibe branchement Type 1",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "sigle": "CIBE1"
+   }
+  },
+  {
+   "id": "a0334",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "COFFRET",
+   "libelle": "Borne Cibe branchement Type 2",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "sigle": "CIBE2"
+   }
+  },
+  {
+   "id": "a0335",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "COFFRET",
+   "libelle": "Coffret C400 / P200",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "sigle": "C400"
+   }
+  },
+  {
+   "id": "a0336",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "COFFRET",
+   "libelle": "Coffret ECP-3D",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "sigle": "ECP-3D"
+   }
+  },
+  {
+   "id": "a0337",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "COFFRET",
+   "libelle": "Coffret P400 / P200",
+   "unite": "U",
+   "statut": "EXISTANT_HORS_BPU",
+   "attributs": {
+    "sigle": "P400",
+    "note": "Rencontré sur le patrimoine existant et en remplacement à l'identique."
+   }
+  },
+  {
+   "id": "a0338",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "COFFRET",
+   "libelle": "Coffret ECP-2D",
+   "unite": "U",
+   "statut": "EXISTANT_HORS_BPU",
+   "attributs": {
+    "sigle": "ECP-2D",
+    "note": "Rencontré sur le patrimoine existant et en remplacement à l'identique."
+   }
+  },
+  {
+   "id": "a0339",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "COFFRET",
+   "libelle": "Coffret P200",
+   "unite": "U",
+   "statut": "EXISTANT_HORS_BPU",
+   "attributs": {
+    "sigle": "P200",
+    "note": "Rencontré sur le patrimoine existant et en remplacement à l'identique."
+   }
+  },
+  {
+   "id": "a0340",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "SOCLE",
+   "libelle": "Socle simple pour coffret S 20 (69.80.035)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0341",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "SOCLE",
+   "libelle": "Socle double pour coffrets S 20 (69.80.036)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0342",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "SOCLE",
+   "libelle": "Chapeau pour socle simple ou double S 20 (69.80.041)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0343",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "GRILLE",
+   "libelle": "Grille de repiquage 35² IP2X (69.80.818) — 3x35² — pour borne Cibe",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "section_reseau": "35"
+   }
+  },
+  {
+   "id": "a0344",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "GRILLE",
+   "libelle": "Grille d'étoilement 150² IP2X (69.80.819) — 1x150² + 2x35² direct",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "section_reseau": "150"
+   }
+  },
+  {
+   "id": "a0345",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "GRILLE",
+   "libelle": "Grille fausse coupure 150² IP2X (69.80.820) — 2x150² + 2x35² direct",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "section_reseau": "150"
+   }
+  },
+  {
+   "id": "a0346",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "GRILLE",
+   "libelle": "Grille fausse coupure 240² IP2X G3 (69.80.821) — 2x240² + 2x35² direct",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "section_reseau": "240"
+   }
+  },
+  {
+   "id": "a0347",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "EXTREMITE_GAINE",
+   "libelle": "Extrémité thermorétractable phases 10 à 35 mm²",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0348",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "EXTREMITE_GAINE",
+   "libelle": "Extrémité thermorétractable phases 50 à 240 mm²",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0349",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "EXTREMITE_GAINE",
+   "libelle": "Gaine neutre 10 à 35 mm²",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0350",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "EXTREMITE_GAINE",
+   "libelle": "Gaine neutre 35 à 115 mm²",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0351",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "TROUSSE_RACCORDEMENT",
+   "libelle": "Trousse de dérivation torsadé/torsadé DPH (4 ou 6 conducteurs)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0352",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "TROUSSE_RACCORDEMENT",
+   "libelle": "Raccordement torsadé/nu LX C",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0353",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "TROUSSE_RACCORDEMENT",
+   "libelle": "Jonction torsadé/torsadé DPG",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0354",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "TROUSSE_RACCORDEMENT",
+   "libelle": "Dérivation nu > 22 mm² sur torsadé (DPH + LX C)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0355",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "TROUSSE_RACCORDEMENT",
+   "libelle": "Jonction aéro-souterraine T 70 sur 3x150+70",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0356",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "TROUSSE_RACCORDEMENT",
+   "libelle": "Jonction aéro-souterraine T 150 sur 3x150+70",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0357",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "TROUSSE_RACCORDEMENT",
+   "libelle": "Jonction aéro-souterraine T 150 sur 3x240",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0358",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "TROUSSE_RACCORDEMENT",
+   "libelle": "Raccordement BT sur coffret existant (grille 150 ou 240)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0359",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "SUJETION_COUPURE",
+   "libelle": "Sujétion de coupure BT (ligne existante)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0360",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "SUJETION_COUPURE",
+   "libelle": "Raccordement BT sous tension",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0361",
+   "categorie": "COFFRET_BT",
+   "sous_categorie": "SUJETION_COUPURE",
+   "libelle": "Sujétion de coupure HT (ligne HTA existante)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0362",
+   "categorie": "BOITE_JONCTION",
+   "sous_categorie": "BT",
+   "libelle": "Boîte de jonction ou dérivation BT",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "BTS",
+    "sections": "≥ 50 mm² (jusqu'à 240)"
+   }
+  },
+  {
+   "id": "a0363",
+   "categorie": "BOITE_JONCTION",
+   "sous_categorie": "BT",
+   "libelle": "Boîte de jonction branchement",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "BRT",
+    "sections": "4x25 / 4x35"
+   }
+  },
+  {
+   "id": "a0364",
+   "categorie": "BOITE_JONCTION",
+   "sous_categorie": "BT",
+   "libelle": "Boîte de jonction EP (l'ensemble)",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "EP",
+    "sections": "toutes sections"
+   }
+  },
+  {
+   "id": "a0365",
+   "categorie": "BOITE_JONCTION",
+   "sous_categorie": "BT",
+   "libelle": "Mise en court-circuit câble BT",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "BTS",
+    "sections": "50 à 240 mm²"
+   }
+  },
+  {
+   "id": "a0366",
+   "categorie": "BOITE_JONCTION",
+   "sous_categorie": "EP",
+   "libelle": "Boîte de jonction EP (réalisation, fourniture comprise)",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "EP"
+   }
+  },
+  {
+   "id": "a0367",
+   "categorie": "BOITE_JONCTION",
+   "sous_categorie": "HTA",
+   "libelle": "Boîte de jonction HTA HN 33 S 33",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "HTA",
+    "sections": "3x95 / 3x150 / 3x240",
+    "note": "⚠ Codes 4-448 / 4-449 également utilisés pour les câbles souterrains HTA."
+   }
+  },
+  {
+   "id": "a0368",
+   "categorie": "BOITE_JONCTION",
+   "sous_categorie": "HTA",
+   "libelle": "Boîte de dérivation tangente HTA",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "HTA",
+    "sections": "3x95 / 3x150 / 3x240",
+    "note": "⚠ Codes 4-448 / 4-449 également utilisés pour les câbles souterrains HTA."
+   }
+  },
+  {
+   "id": "a0369",
+   "categorie": "BOITE_JONCTION",
+   "sous_categorie": "HTA",
+   "libelle": "Mise en court-circuit câble HTA",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "HTA",
+    "sections": "50 à 240 mm²",
+    "note": "⚠ Codes 4-448 / 4-449 également utilisés pour les câbles souterrains HTA."
+   }
+  },
+  {
+   "id": "a0370",
+   "categorie": "BOITE_JONCTION",
+   "sous_categorie": "ACCESSOIRE_HTA_POSTE",
+   "libelle": "Extrémité unipolaire rétractable à froid 95² (E3EUIC RF 24 50-240)",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "HTA"
+   }
+  },
+  {
+   "id": "a0371",
+   "categorie": "BOITE_JONCTION",
+   "sous_categorie": "ACCESSOIRE_HTA_POSTE",
+   "libelle": "Extrémité unipolaire rétractable à froid 150² (E3EUIC RF 24 50-240)",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "HTA"
+   }
+  },
+  {
+   "id": "a0372",
+   "categorie": "BOITE_JONCTION",
+   "sous_categorie": "ACCESSOIRE_HTA_POSTE",
+   "libelle": "Extrémité E3EUIC RF RSM 50-240, cosses à serrage mécanique",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "HTA"
+   }
+  },
+  {
+   "id": "a0373",
+   "categorie": "BOITE_JONCTION",
+   "sous_categorie": "ACCESSOIRE_HTA_POSTE",
+   "libelle": "Connecteur séparable équerre 95² (CSE-250 A 24-95)",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "HTA"
+   }
+  },
+  {
+   "id": "a0374",
+   "categorie": "BOITE_JONCTION",
+   "sous_categorie": "ACCESSOIRE_HTA_POSTE",
+   "libelle": "Connecteur séparable équerre 150² (CSE-400 B 24-150)",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "HTA"
+   }
+  },
+  {
+   "id": "a0375",
+   "categorie": "ERAS",
+   "sous_categorie": "BT_RESEAU",
+   "libelle": "Remontée de câble aéro-souterrain réseau, toutes sections (hors câbles de branchement)",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "BTS",
+    "malt_obligatoire": true
+   }
+  },
+  {
+   "id": "a0376",
+   "categorie": "ERAS",
+   "sous_categorie": "BT_RESEAU",
+   "libelle": "PV par câble EP sous protection commune",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "EP"
+   }
+  },
+  {
+   "id": "a0377",
+   "categorie": "ERAS",
+   "sous_categorie": "BRANCHEMENT",
+   "libelle": "Remontée aéro-souterraine de câble de branchement, protection mécanique comprise",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "BRT",
+    "malt_obligatoire": false,
+    "note": "Pas de MALT : un câble de branchement n'est pas du réseau BT."
+   }
+  },
+  {
+   "id": "a0378",
+   "categorie": "ERAS",
+   "sous_categorie": "HTA",
+   "libelle": "Remontée aéro-souterraine HTA",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "HTA"
+   }
+  },
+  {
+   "id": "a0379",
+   "categorie": "ERAS",
+   "sous_categorie": "HTA",
+   "libelle": "Fourniture et pose de chemin de câble sur support métallique pour remontée aéro-souterraine HTA, toute section",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "HTA"
+   }
+  },
+  {
+   "id": "a0380",
+   "categorie": "ERAS",
+   "sous_categorie": "EP",
+   "libelle": "Confection RAS EP sur support existant",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "EP"
+   }
+  },
+  {
+   "id": "a0381",
+   "categorie": "POSTE",
+   "sous_categorie": "TRANSFORMATEUR",
+   "libelle": "Transformateur en cabine 160 kVA",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "implantation": "CABINE",
+    "puissance_kva": 160
+   }
+  },
+  {
+   "id": "a0382",
+   "categorie": "POSTE",
+   "sous_categorie": "TRANSFORMATEUR",
+   "libelle": "Transformateur en cabine 250 kVA",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "implantation": "CABINE",
+    "puissance_kva": 250
+   }
+  },
+  {
+   "id": "a0383",
+   "categorie": "POSTE",
+   "sous_categorie": "TRANSFORMATEUR",
+   "libelle": "Transformateur en cabine 400 kVA",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "implantation": "CABINE",
+    "puissance_kva": 400
+   }
+  },
+  {
+   "id": "a0384",
+   "categorie": "POSTE",
+   "sous_categorie": "TRANSFORMATEUR",
+   "libelle": "Transformateur en cabine 630 kVA",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "implantation": "CABINE",
+    "puissance_kva": 630
+   }
+  },
+  {
+   "id": "a0385",
+   "categorie": "POSTE",
+   "sous_categorie": "TRANSFORMATEUR",
+   "libelle": "Transformateur en cabine 1000 kVA",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "implantation": "CABINE",
+    "puissance_kva": 1000
+   }
+  },
+  {
+   "id": "a0386",
+   "categorie": "POSTE",
+   "sous_categorie": "TRANSFORMATEUR",
+   "libelle": "Transformateur sur poteau 50 kVA",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "implantation": "POTEAU",
+    "puissance_kva": 50
+   }
+  },
+  {
+   "id": "a0387",
+   "categorie": "POSTE",
+   "sous_categorie": "TRANSFORMATEUR",
+   "libelle": "Transformateur sur poteau 100 kVA",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "implantation": "POTEAU",
+    "puissance_kva": 100
+   }
+  },
+  {
+   "id": "a0388",
+   "categorie": "POSTE",
+   "sous_categorie": "TRANSFORMATEUR",
+   "libelle": "Transformateur sur poteau 160 kVA",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "implantation": "POTEAU",
+    "puissance_kva": 160
+   }
+  },
+  {
+   "id": "a0389",
+   "categorie": "POSTE",
+   "sous_categorie": "TRANSFORMATEUR",
+   "libelle": "Transformateur sur poteau anti-pollution 50 kVA",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "implantation": "POTEAU_ANTIPOLLUTION",
+    "puissance_kva": 50
+   }
+  },
+  {
+   "id": "a0390",
+   "categorie": "POSTE",
+   "sous_categorie": "TRANSFORMATEUR",
+   "libelle": "Transformateur sur poteau anti-pollution 100 kVA",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "implantation": "POTEAU_ANTIPOLLUTION",
+    "puissance_kva": 100
+   }
+  },
+  {
+   "id": "a0391",
+   "categorie": "POSTE",
+   "sous_categorie": "TRANSFORMATEUR",
+   "libelle": "Transformateur sur poteau anti-pollution 160 kVA",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "implantation": "POTEAU_ANTIPOLLUTION",
+    "puissance_kva": 160
+   }
+  },
+  {
+   "id": "a0392",
+   "categorie": "POSTE",
+   "sous_categorie": "H61",
+   "libelle": "Équipement d'un transformateur type H 61 (50 à 160 kVA), transport et pose compris",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "sigle": "H61"
+   }
+  },
+  {
+   "id": "a0393",
+   "categorie": "POSTE",
+   "sous_categorie": "H61",
+   "libelle": "Remplacement transfo H 61 sur poteau, sans remplacement du coffret disjoncteur",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "sigle": "H61"
+   }
+  },
+  {
+   "id": "a0394",
+   "categorie": "POSTE",
+   "sous_categorie": "H61",
+   "libelle": "Remplacement transfo H 61 sur poteau, avec remplacement du coffret disjoncteur",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "sigle": "H61"
+   }
+  },
+  {
+   "id": "a0395",
+   "categorie": "POSTE",
+   "sous_categorie": "H61",
+   "libelle": "Réfection de liaison transfo-coffret",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "sigle": "H61"
+   }
+  },
+  {
+   "id": "a0396",
+   "categorie": "POSTE",
+   "sous_categorie": "H61",
+   "libelle": "PV coffret disjoncteur D 265-75 (2 départs)",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "sigle": "H61"
+   }
+  },
+  {
+   "id": "a0397",
+   "categorie": "POSTE",
+   "sous_categorie": "H61",
+   "libelle": "Remplacement de coffret disjoncteur en mise en conformité",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "sigle": "H61"
+   }
+  },
+  {
+   "id": "a0398",
+   "categorie": "POSTE",
+   "sous_categorie": "POSTE_AU_SOL",
+   "libelle": "Cabine basse sur socle 100 kVA (dalle béton préfa comprise) — 15 ou 20 kV",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "sigle": "CB"
+   }
+  },
+  {
+   "id": "a0399",
+   "categorie": "POSTE",
+   "sous_categorie": "POSTE_AU_SOL",
+   "libelle": "Cabine basse sur socle 160 kVA (dalle béton préfa comprise) — 15 ou 20 kV",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "sigle": "CB"
+   }
+  },
+  {
+   "id": "a0400",
+   "categorie": "POSTE",
+   "sous_categorie": "POSTE_AU_SOL",
+   "libelle": "Poste PSS-A (enveloppe béton, portes, ventilation, toit ouvrant)",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "sigle": "PSS-A"
+   }
+  },
+  {
+   "id": "a0401",
+   "categorie": "POSTE",
+   "sous_categorie": "POSTE_AU_SOL",
+   "libelle": "Poste PSS-B (PSS-A + tableau HTA compact avec cellules)",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "sigle": "PSS-B"
+   }
+  },
+  {
+   "id": "a0402",
+   "categorie": "POSTE",
+   "sous_categorie": "POSTE_AU_SOL",
+   "libelle": "Poste urbain compact 6 m² DP 250 kVA (15/20 kV, cellule HT 2I+P)",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "sigle": "PUC"
+   }
+  },
+  {
+   "id": "a0403",
+   "categorie": "POSTE",
+   "sous_categorie": "POSTE_AU_SOL",
+   "libelle": "Poste urbain compact 6 m² DP 400 et 630 kVA (15/20 kV, cellule HT 2I+P)",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "sigle": "PUC"
+   }
+  },
+  {
+   "id": "a0404",
+   "categorie": "POSTE",
+   "sous_categorie": "POSTE_AU_SOL",
+   "libelle": "Poste urbain STB 10 OP (10 m²) 400 et 630 kVA (15/20 kV, cellule 2I+P)",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "sigle": "STB"
+   }
+  },
+  {
+   "id": "a0405",
+   "categorie": "POSTE",
+   "sous_categorie": "POSTE_AU_SOL",
+   "libelle": "Poste urbain 1000 kVA — T8 1800 A + cellules",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "sigle": "PU"
+   }
+  },
+  {
+   "id": "a0406",
+   "categorie": "POSTE",
+   "sous_categorie": "POSTE_AU_SOL",
+   "libelle": "Poste urbain 1000 kVA — T8 1800 A + cellules motorisées",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "sigle": "PU"
+   }
+  },
+  {
+   "id": "a0407",
+   "categorie": "POSTE",
+   "sous_categorie": "POSTE_AU_SOL",
+   "libelle": "Option toit tuiles canal 1 ou 2 pentes",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0408",
+   "categorie": "POSTE",
+   "sous_categorie": "POSTE_AU_SOL",
+   "libelle": "Serrure tout type de poste",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0409",
+   "categorie": "POSTE",
+   "sous_categorie": "POSTE_EXISTANT",
+   "libelle": "Poste préfabriqué Rural Compact",
+   "unite": "U",
+   "statut": "EXISTANT_HORS_BPU",
+   "attributs": {
+    "sigle": "RC",
+    "code_depose": "8-026"
+   }
+  },
+  {
+   "id": "a0410",
+   "categorie": "POSTE",
+   "sous_categorie": "POSTE_EXISTANT",
+   "libelle": "Poste préfabriqué Rural Simplifié",
+   "unite": "U",
+   "statut": "EXISTANT_HORS_BPU",
+   "attributs": {
+    "sigle": "RS",
+    "code_depose": "8-026"
+   }
+  },
+  {
+   "id": "a0411",
+   "categorie": "POSTE",
+   "sous_categorie": "POSTE_EXISTANT",
+   "libelle": "Poste de transformation préfabriqué à couloir de manœuvre",
+   "unite": "U",
+   "statut": "EXISTANT_HORS_BPU",
+   "attributs": {
+    "sigle": "PAC",
+    "code_depose": "8-027"
+   }
+  },
+  {
+   "id": "a0412",
+   "categorie": "POSTE",
+   "sous_categorie": "POSTE_EXISTANT",
+   "libelle": "Poste maçonné cabine haute",
+   "unite": "U",
+   "statut": "EXISTANT_HORS_BPU",
+   "attributs": {
+    "sigle": "CABINE HAUTE",
+    "code_depose": "8-028"
+   }
+  },
+  {
+   "id": "a0413",
+   "categorie": "POSTE",
+   "sous_categorie": "POSTE_EXISTANT",
+   "libelle": "Poste sur poteau H 59",
+   "unite": "U",
+   "statut": "EXISTANT_HORS_BPU",
+   "attributs": {
+    "sigle": "H 59"
+   }
+  },
+  {
+   "id": "a0414",
+   "categorie": "POSTE",
+   "sous_categorie": "EQUIPEMENT_HTA_BT",
+   "libelle": "Cellule dans poste existant",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0415",
+   "categorie": "POSTE",
+   "sous_categorie": "EQUIPEMENT_HTA_BT",
+   "libelle": "Tableau HT 2I + P (dépose de l'existant comprise)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0416",
+   "categorie": "POSTE",
+   "sous_categorie": "EQUIPEMENT_HTA_BT",
+   "libelle": "Tableau TIPI T4 800 A",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0417",
+   "categorie": "POSTE",
+   "sous_categorie": "EQUIPEMENT_HTA_BT",
+   "libelle": "Tableau TIPI T8 1200 A",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0418",
+   "categorie": "POSTE",
+   "sous_categorie": "EQUIPEMENT_HTA_BT",
+   "libelle": "Tableau TIPI T8 1800 A",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0419",
+   "categorie": "POSTE",
+   "sous_categorie": "EQUIPEMENT_HTA_BT",
+   "libelle": "Départ monobloc (HPC + barrette de neutre)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0420",
+   "categorie": "POSTE",
+   "sous_categorie": "EQUIPEMENT_HTA_BT",
+   "libelle": "Panneau de réservation",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0421",
+   "categorie": "POSTE",
+   "sous_categorie": "EQUIPEMENT_HTA_BT",
+   "libelle": "Raccordement câble BT toute section au tableau (3 phases)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0422",
+   "categorie": "POSTE",
+   "sous_categorie": "EQUIPEMENT_HTA_BT",
+   "libelle": "Branchement coffret EP",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0423",
+   "categorie": "POSTE",
+   "sous_categorie": "EQUIPEMENT_HTA_BT",
+   "libelle": "Liaison BT en unipolaires 240 mm² U1000 ARO2V Alu (4 câbles)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0424",
+   "categorie": "POSTE",
+   "sous_categorie": "EQUIPEMENT_HTA_BT",
+   "libelle": "Liaison BT en unipolaires 240 mm² U1000 ARO2V Alu (7 câbles)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0425",
+   "categorie": "POSTE",
+   "sous_categorie": "EQUIPEMENT_HTA_BT",
+   "libelle": "Liaison BT en unipolaires 240 mm² U1000 ARO2V Alu (14 câbles)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0426",
+   "categorie": "POSTE",
+   "sous_categorie": "EQUIPEMENT_HTA_BT",
+   "libelle": "Fusibles HTA 3 x 16 A",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0427",
+   "categorie": "POSTE",
+   "sous_categorie": "EQUIPEMENT_HTA_BT",
+   "libelle": "Fusibles HTA 3 x 43 A",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0428",
+   "categorie": "POSTE",
+   "sous_categorie": "EQUIPEMENT_HTA_BT",
+   "libelle": "Fusibles HTA 3 x 63 A",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0429",
+   "categorie": "COUPURE_HTA",
+   "sous_categorie": "APPAREILLAGE",
+   "libelle": "Interrupteur aérien IACM 100 A (sur support à implanter ou existant)",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "sigle": "IACM",
+    "reseau": "aérien",
+    "domaine": "HTA"
+   }
+  },
+  {
+   "id": "a0430",
+   "categorie": "COUPURE_HTA",
+   "sous_categorie": "APPAREILLAGE",
+   "libelle": "Armoire de coupure manuelle type Biosco - AC3M",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "sigle": "AC3M",
+    "reseau": "souterrain",
+    "domaine": "HTA",
+    "note": "Raccordement en 3x95 / 3x150 / 3x240 C 33-226 via extrémités 5-494 à 5-498."
+   }
+  },
+  {
+   "id": "a0431",
+   "categorie": "COUPURE_HTA",
+   "sous_categorie": "APPAREILLAGE",
+   "libelle": "Armoire de coupure télécommandée type Biosco - AC3T",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "sigle": "AC3T",
+    "reseau": "souterrain",
+    "domaine": "HTA",
+    "note": "Raccordement en 3x95 / 3x150 / 3x240 C 33-226 via extrémités 5-494 à 5-498."
+   }
+  },
+  {
+   "id": "a0432",
+   "categorie": "MALT",
+   "sous_categorie": "ARTICLE",
+   "libelle": "Reprise d'une terre existante et raccordement sur un nouveau réseau",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0433",
+   "categorie": "MALT",
+   "sous_categorie": "ARTICLE",
+   "libelle": "Confection d'une prise de terre + descente par câble cuivre nu ou isolé 25 mm², rangé à fond de fouille, ≈ 10 m de cuivre enterré",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0434",
+   "categorie": "MALT",
+   "sous_categorie": "ARTICLE",
+   "libelle": "Fourniture et pose de déconnecteur de terre (barrette de coupure)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0435",
+   "categorie": "MALT",
+   "sous_categorie": "ARTICLE",
+   "libelle": "Gaine thermorétractable 1 m sur conducteur de terre 25 mm² cuivre (réseau pré-assemblé), gaine 10 à 35 mm²",
+   "unite": "ML",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0436",
+   "categorie": "MALT",
+   "sous_categorie": "ARTICLE",
+   "libelle": "Amélioration par tranchée dédiée 0,40 à 1,00 m de profondeur x 0,30 m de large, câblette cuivre nu 25 mm² à raison de 3 m par ml de tranchée, terrain meuble",
+   "unite": "ML",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0437",
+   "categorie": "MALT",
+   "sous_categorie": "ARTICLE",
+   "libelle": "Amélioration en tranchée ouverte (travaux souterrains) : déroulage de câblette cuivre nu 25 mm², 3 m par ml de tranchée",
+   "unite": "ML",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0438",
+   "categorie": "MALT",
+   "sous_categorie": "ARTICLE",
+   "libelle": "PV amélioration en terrain rocheux (compresseur ou explosif)",
+   "unite": "M3",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0439",
+   "categorie": "MALT",
+   "sous_categorie": "ARTICLE",
+   "libelle": "Amélioration par piquets de terre de 1 m, cosses de raccordement comprises",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0440",
+   "categorie": "MALT",
+   "sous_categorie": "ARTICLE",
+   "libelle": "Amélioration de prise de terre par forage",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0441",
+   "categorie": "FOURREAU",
+   "sous_categorie": "TPC_ACIER",
+   "libelle": "Fourreau TPC rouge en couronne ∅ 40 aiguillé",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "diametre_mm": 40
+   }
+  },
+  {
+   "id": "a0442",
+   "categorie": "FOURREAU",
+   "sous_categorie": "TPC_ACIER",
+   "libelle": "Fourreau TPC rouge en couronne ∅ 63 aiguillé",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "diametre_mm": 63
+   }
+  },
+  {
+   "id": "a0443",
+   "categorie": "FOURREAU",
+   "sous_categorie": "TPC_ACIER",
+   "libelle": "Fourreau TPC rouge ∅ 110 aiguillé",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "diametre_mm": 110
+   }
+  },
+  {
+   "id": "a0444",
+   "categorie": "FOURREAU",
+   "sous_categorie": "TPC_ACIER",
+   "libelle": "Fourreau TPC rouge ∅ 160 aiguillé",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "diametre_mm": 160
+   }
+  },
+  {
+   "id": "a0445",
+   "categorie": "FOURREAU",
+   "sous_categorie": "TPC_ACIER",
+   "libelle": "Fourreau acier ∅ 100",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "diametre_mm": 100
+   }
+  },
+  {
+   "id": "a0446",
+   "categorie": "FOURREAU",
+   "sous_categorie": "TPC_ACIER",
+   "libelle": "Fourreau acier ∅ 150",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "diametre_mm": 150
+   }
+  },
+  {
+   "id": "a0447",
+   "categorie": "FOURREAU",
+   "sous_categorie": "TPC_ACIER",
+   "libelle": "Fourreau TPC ∅ 90",
+   "unite": "ML",
+   "statut": "EXISTANT_HORS_BPU",
+   "attributs": {
+    "diametre_mm": 90,
+    "note": "Notation de branchement souterrain : « 4x35 TPC ∅ 90 ». Chiffrage en ∅ 63 ou ∅ 110."
+   }
+  },
+  {
+   "id": "a0448",
+   "categorie": "ECLAIRAGE_PUBLIC",
+   "sous_categorie": "MATERIEL",
+   "libelle": "Pose câble EP aérien tendu sur support",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "EP"
+   }
+  },
+  {
+   "id": "a0449",
+   "categorie": "ECLAIRAGE_PUBLIC",
+   "sous_categorie": "MATERIEL",
+   "libelle": "Pose câble EP aérien par chevilles tous les 50 cm",
+   "unite": "ML",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "EP"
+   }
+  },
+  {
+   "id": "a0450",
+   "categorie": "ECLAIRAGE_PUBLIC",
+   "sous_categorie": "MATERIEL",
+   "libelle": "Raccordement d'une lampe sur réseau aérien",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "EP"
+   }
+  },
+  {
+   "id": "a0451",
+   "categorie": "ECLAIRAGE_PUBLIC",
+   "sous_categorie": "MATERIEL",
+   "libelle": "Coffret S20 équipé horloge (coupure nocturne)",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "EP"
+   }
+  },
+  {
+   "id": "a0452",
+   "categorie": "ECLAIRAGE_PUBLIC",
+   "sous_categorie": "MATERIEL",
+   "libelle": "Coffret S20 protection différentielle (passage aérien → souterrain)",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "EP"
+   }
+  },
+  {
+   "id": "a0453",
+   "categorie": "ECLAIRAGE_PUBLIC",
+   "sous_categorie": "MATERIEL",
+   "libelle": "Armoire de commande EP monophasée (coffret S17)",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "EP"
+   }
+  },
+  {
+   "id": "a0454",
+   "categorie": "ECLAIRAGE_PUBLIC",
+   "sous_categorie": "MATERIEL",
+   "libelle": "Armoire de commande EP triphasée (coffret S17)",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "EP"
+   }
+  },
+  {
+   "id": "a0455",
+   "categorie": "ECLAIRAGE_PUBLIC",
+   "sous_categorie": "MATERIEL",
+   "libelle": "Départ supplémentaire mono non différentiel",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "EP"
+   }
+  },
+  {
+   "id": "a0456",
+   "categorie": "ECLAIRAGE_PUBLIC",
+   "sous_categorie": "MATERIEL",
+   "libelle": "Départ supplémentaire tri non différentiel",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "EP"
+   }
+  },
+  {
+   "id": "a0457",
+   "categorie": "ECLAIRAGE_PUBLIC",
+   "sous_categorie": "MATERIEL",
+   "libelle": "Départ supplémentaire mono différentiel 300 mA",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "EP"
+   }
+  },
+  {
+   "id": "a0458",
+   "categorie": "ECLAIRAGE_PUBLIC",
+   "sous_categorie": "MATERIEL",
+   "libelle": "Départ supplémentaire tri différentiel 300 mA",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "EP"
+   }
+  },
+  {
+   "id": "a0459",
+   "categorie": "ECLAIRAGE_PUBLIC",
+   "sous_categorie": "DEPOSE_REPOSE",
+   "libelle": "Dépose lampe EP",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "EP"
+   }
+  },
+  {
+   "id": "a0460",
+   "categorie": "ECLAIRAGE_PUBLIC",
+   "sous_categorie": "DEPOSE_REPOSE",
+   "libelle": "Dépose coffret EP (cellule comprise)",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "EP"
+   }
+  },
+  {
+   "id": "a0461",
+   "categorie": "ECLAIRAGE_PUBLIC",
+   "sous_categorie": "DEPOSE_REPOSE",
+   "libelle": "Repose coffret EP",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "EP"
+   }
+  },
+  {
+   "id": "a0462",
+   "categorie": "ECLAIRAGE_PUBLIC",
+   "sous_categorie": "DEPOSE_REPOSE",
+   "libelle": "Pose lampe de récupération",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "EP"
+   }
+  },
+  {
+   "id": "a0463",
+   "categorie": "ECLAIRAGE_PUBLIC",
+   "sous_categorie": "DEPOSE_REPOSE",
+   "libelle": "Repose cellule EP",
+   "unite": "U",
+   "statut": "BPU",
+   "attributs": {
+    "domaine": "EP"
+   }
+  },
+  {
+   "id": "a0464",
+   "categorie": "ECLAIRAGE_PUBLIC",
+   "sous_categorie": "NOTATION",
+   "libelle": "Câble EP",
+   "unite": "ML",
+   "statut": "EXISTANT_HORS_BPU",
+   "attributs": {
+    "domaine": "EP",
+    "note": "Notation imposée : « EP TPC ∅ 63 » — pas de détail de section EP."
+   }
+  },
+  {
+   "id": "a0465",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Dépose conducteurs nus alu, almélec ou cuivre — section < 22 mm²",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0466",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Dépose conducteurs nus alu, almélec ou cuivre — section ≥ 22 mm²",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0467",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Moins-value de récupération cuivre (1)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0468",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Moins-value de récupération cuivre (2)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0469",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Dépose câble isolé torsadé toutes sections, tendu sur support",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0470",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Dépose câble isolé torsadé toutes sections, tendu sur façade",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0471",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Dépose câble isolé torsadé toutes sections, crampé sur façade",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0472",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Dépose branchement (torsadé 2x25 / 4x25 / 2x16, fils nus)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0473",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Dépose câble de façade",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0474",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Dépose poteau béton réutilisable",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0475",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Dépose poteau béton non réutilisable",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0476",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Dépose poteau béton avec enlèvement du massif",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0477",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Dépose poteau bois réutilisable",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0478",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Dépose poteau bois non réutilisable",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0479",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Dépose hauban",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0480",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Sectionnement de poutrelle métallique",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0481",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Sectionnement de pylône métallique",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0482",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Dépose console de façade",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0483",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Dépose armement HT/BT",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0484",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Dépose ferrure FT Orange / fibre",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0485",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Dépose remontée aéro-souterraine BTA sur support existant maintenu",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0486",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Dépose remontée aéro-souterraine HTA sur support existant maintenu",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0487",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Dépose de la remontée aéro-souterraine d'un branchement individuel",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0488",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Dépose IACM existant",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0489",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Dépose poste H 61 (transfo + appareillage)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0490",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Dépose transformateur en cabine, toutes puissances",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0491",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Dépose poste préfabriqué RS / RC / PSS-A / PSS-B",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0492",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Dépose poste PAC",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0493",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Démolition totale poste maçonné / cabine haute",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0494",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Dépose tableau BT TUR ou TIPI dans poste conservé",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0495",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Dépose interrupteur HTA souterrain (mise à disposition du SIEEP)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0496",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Repose IACM sur nouveau support",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0497",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Dépose coffret FC (fausse coupure)",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0498",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "DEPOSE",
+   "libelle": "Dépose de grille de coffret FC",
+   "unite": "U",
+   "statut": "BPU"
+  },
+  {
+   "id": "a0499",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "PATRIMOINE",
+   "libelle": "Câble souterrain ancien papier imprégné",
+   "unite": "U",
+   "statut": "EXISTANT_HORS_BPU"
+  },
+  {
+   "id": "a0500",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "PATRIMOINE",
+   "libelle": "Câble souterrain ancien ceinture plombée",
+   "unite": "U",
+   "statut": "EXISTANT_HORS_BPU"
+  },
+  {
+   "id": "a0501",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "PATRIMOINE",
+   "libelle": "Câble souterrain ancien alu",
+   "unite": "U",
+   "statut": "EXISTANT_HORS_BPU"
+  },
+  {
+   "id": "a0502",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "PATRIMOINE",
+   "libelle": "Câble souterrain ancien cuivre",
+   "unite": "U",
+   "statut": "EXISTANT_HORS_BPU"
+  },
+  {
+   "id": "a0503",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "PATRIMOINE",
+   "libelle": "Coffret S 20 ancienne génération (socle simple ou double)",
+   "unite": "U",
+   "statut": "EXISTANT_HORS_BPU"
+  },
+  {
+   "id": "a0504",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "PATRIMOINE",
+   "libelle": "Grille de fausse coupure ancienne génération (socle S20 double ou S15)",
+   "unite": "U",
+   "statut": "EXISTANT_HORS_BPU"
+  },
+  {
+   "id": "a0505",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "PATRIMOINE",
+   "libelle": "Poteau béton ancien toutes classes",
+   "unite": "U",
+   "statut": "EXISTANT_HORS_BPU"
+  },
+  {
+   "id": "a0506",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "PATRIMOINE",
+   "libelle": "Poteau bois ancien toutes classes",
+   "unite": "U",
+   "statut": "EXISTANT_HORS_BPU"
+  },
+  {
+   "id": "a0507",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "PATRIMOINE",
+   "libelle": "Poutrelle métallique ancienne",
+   "unite": "U",
+   "statut": "EXISTANT_HORS_BPU"
+  },
+  {
+   "id": "a0508",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "PATRIMOINE",
+   "libelle": "Pylône métallique ancien",
+   "unite": "U",
+   "statut": "EXISTANT_HORS_BPU"
+  },
+  {
+   "id": "a0509",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "PATRIMOINE",
+   "libelle": "Tableau BT ancien TUR",
+   "unite": "U",
+   "statut": "EXISTANT_HORS_BPU"
+  },
+  {
+   "id": "a0510",
+   "categorie": "DEPOSE_EXISTANT",
+   "sous_categorie": "PATRIMOINE",
+   "libelle": "Tableau BT ancien TIPI T4 / T8",
+   "unite": "U",
+   "statut": "EXISTANT_HORS_BPU"
+  },
+  {
+   "id": "a0511",
+   "categorie": "DIVERS",
+   "sous_categorie": "MACONNERIE_GENIE_CIVIL",
+   "libelle": "Béton armé",
+   "unite": "U",
+   "statut": "EXISTANT_HORS_BPU"
+  },
+  {
+   "id": "a0512",
+   "categorie": "DIVERS",
+   "sous_categorie": "MACONNERIE_GENIE_CIVIL",
+   "libelle": "Maçonnerie agglos 20x20x50",
+   "unite": "U",
+   "statut": "EXISTANT_HORS_BPU"
+  },
+  {
+   "id": "a0513",
+   "categorie": "DIVERS",
+   "sous_categorie": "MACONNERIE_GENIE_CIVIL",
+   "libelle": "Enduit 3 couches",
+   "unite": "U",
+   "statut": "EXISTANT_HORS_BPU"
+  },
+  {
+   "id": "a0514",
+   "categorie": "DIVERS",
+   "sous_categorie": "MACONNERIE_GENIE_CIVIL",
+   "libelle": "Couverture tuiles demi-rondes",
+   "unite": "U",
+   "statut": "EXISTANT_HORS_BPU"
+  },
+  {
+   "id": "a0515",
+   "categorie": "DIVERS",
+   "sous_categorie": "MACONNERIE_GENIE_CIVIL",
+   "libelle": "Couverture lauzes",
+   "unite": "U",
+   "statut": "EXISTANT_HORS_BPU"
+  },
+  {
+   "id": "a0516",
+   "categorie": "DIVERS",
+   "sous_categorie": "MACONNERIE_GENIE_CIVIL",
+   "libelle": "Pierres cimentées",
+   "unite": "U",
+   "statut": "EXISTANT_HORS_BPU"
+  },
+  {
+   "id": "a0517",
+   "categorie": "DIVERS",
+   "sous_categorie": "MACONNERIE_GENIE_CIVIL",
+   "libelle": "Pierres sèches",
+   "unite": "U",
+   "statut": "EXISTANT_HORS_BPU"
+  },
+  {
+   "id": "a0518",
+   "categorie": "DIVERS",
+   "sous_categorie": "MACONNERIE_GENIE_CIVIL",
+   "libelle": "Clôture métallique 1,20 m",
+   "unite": "U",
+   "statut": "EXISTANT_HORS_BPU"
+  }
+ ]
+}

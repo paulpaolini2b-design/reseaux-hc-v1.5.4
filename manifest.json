@@ -1,0 +1,17 @@
+{
+  "name": "Réseaux HC — tracé de réseaux BT/HTA",
+  "short_name": "Réseaux HC",
+  "description": "Tracé, symbolisation et annotation de réseaux électriques HTA/BT sur fond de plan, hors ligne, sur tablette.",
+  "lang": "fr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#FFFFFF",
+  "theme_color": "#14307D",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

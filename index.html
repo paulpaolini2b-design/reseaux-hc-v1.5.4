@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#14307D">
+<meta name="mobile-web-app-capable" content="yes">
+<title>Réseaux HC — tracé de réseaux BT/HTA</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="css/app.css">
+<!-- Bibliothèques embarquées (aucune dépendance CDN) -->
+<script src="vendor/pdf-lib/pdf-lib.min.js"></script>
+<script src="vendor/fontkit/fontkit.umd.min.js"></script>
+</head>
+<body>
+<div id="app" data-orientation="paysage">
+
+  <!-- ====== Barre supérieure ====== -->
+  <header id="barre-haut">
+    <button class="btn-icone" id="btn-projets" title="Projets" aria-label="Projets">
+      <svg viewBox="0 0 24 24"><path d="M3 5h6l2 2h10v12H3z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    </button>
+    <div id="titre-projet">
+      <span id="nom-projet" role="button" tabindex="0" title="Informations de l’affaire">Aucun projet</span>
+      <span id="statut-projet" class="pastille-statut" hidden></span>
+      <span id="etat-sauvegarde" title="État de la sauvegarde"></span>
+    </div>
+    <div id="actions-haut">
+      <button class="btn-icone" id="btn-fond" title="Fond de plan (PDF, image, photo)">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 16l5-5 4 4 3-3 6 6" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="9" r="1.6" fill="currentColor"/></svg>
+      </button>
+      <button class="btn-icone" id="btn-calques" title="Calques et filtres">
+        <svg viewBox="0 0 24 24"><path d="M12 4l9 5-9 5-9-5z M3 14l9 5 9-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="btn-icone" id="btn-a-completer" title="Objets à compléter">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v6M12 16v1" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <span class="badge" id="badge-a-completer" hidden>0</span>
+      </button>
+      <button class="btn-icone" id="btn-etiquettes" title="Masquer / afficher les étiquettes" aria-pressed="true">
+        <svg viewBox="0 0 24 24"><path d="M4 7h12l4 5-4 5H4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="btn-icone" id="btn-papier" title="Aperçu rendu papier">
+        <svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 3v4h4" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+      </button>
+      <button class="btn-icone" id="btn-export" title="Exporter (PDF, PNG, JSON)">
+        <svg viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 20h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="btn-icone" id="btn-aide" title="Aide et raccourcis (?)">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 1-1 1.7M12 17v.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ====== Barre d'outils latérale ====== -->
+  <nav id="barre-outils" aria-label="Outils">
+    <div id="outils-principaux"></div>
+    <div id="annuler-retablir">
+      <button class="btn-outil" id="btn-annuler" title="Annuler (Ctrl+Z)" disabled>
+        <svg viewBox="0 0 24 24"><path d="M9 7L4 12l5 5M4 12h11a5 5 0 0 1 0 10h-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="btn-outil" id="btn-retablir" title="Rétablir (Ctrl+Y)" disabled>
+        <svg viewBox="0 0 24 24"><path d="M15 7l5 5-5 5M20 12H9a5 5 0 0 0 0 10h2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ====== Zone de plan ====== -->
+  <main id="zone-plan">
+    <canvas id="fond-canvas"></canvas>
+    <svg id="plan-svg" xmlns="http://www.w3.org/2000/svg">
+      <g id="g-vue">
+        <g id="g-objets"></g>
+        <g id="g-temporaire"></g>
+      </g>
+      <g id="g-poignees"></g>
+      <g id="g-curseur"></g>
+    </svg>
+    <div id="bandeau-archive" role="status" hidden>
+      <span>Archivé — consultation</span>
+      <button type="button" class="btn" data-action="desarchiver">Désarchiver pour modifier</button>
+    </div>
+    <div id="message-vide">
+      <p>Ouvrez un projet, puis ajoutez un fond de plan (PDF, image ou photo).</p>
+    </div>
+    <div id="indicateur-zoom"></div>
+    <!-- Plans du projet (v1.4.5) : visible à partir de 2 plans -->
+    <div id="selecteur-plans" role="navigation" aria-label="Plans du projet" hidden></div>
+    <div id="options-outil" hidden></div>
+  </main>
+
+  <!-- ====== Sélecteur réseau + état (toujours visible) ====== -->
+  <section id="selecteur-courant" aria-label="Réseau et état en cours de tracé">
+    <div class="groupe" id="sel-domaine"></div>
+    <div class="groupe" id="sel-pose"></div>
+    <div class="groupe" id="sel-etat"></div>
+    <svg id="apercu-style" viewBox="0 0 120 24" aria-hidden="true"></svg>
+  </section>
+
+  <!-- ====== Tiroirs et panneaux ====== -->
+  <aside id="palette" class="tiroir" hidden></aside>
+  <aside id="palette-outils" class="tiroir" hidden></aside>
+  <aside id="fiche" class="panneau" hidden></aside>
+  <aside id="panneau-calques" class="panneau" hidden></aside>
+  <aside id="panneau-a-completer" class="panneau" hidden></aside>
+
+  <!-- Gestionnaire de projets plein écran (lot 1.4) -->
+  <section id="gestionnaire" aria-label="Gestionnaire de projets" hidden></section>
+
+  <!-- Éditeur du descriptif des travaux, plein écran (v1.5.0) -->
+  <section id="editeur-descriptif" aria-label="Descriptif des travaux" hidden></section>
+
+  <div id="menu-contextuel" hidden></div>
+  <div id="curseur-stylet" hidden></div>
+  <div id="notifications"></div>
+
+  <!-- Boîtes de dialogue -->
+  <dialog id="dlg-projets"></dialog>
+  <dialog id="dlg-fond"></dialog>
+  <dialog id="dlg-export"></dialog>
+  <dialog id="dlg-aide"></dialog>
+  <dialog id="dlg-note"></dialog>
+  <dialog id="dlg-generique"></dialog>
+  <dialog id="dlg-couleur"></dialog>
+
+  <!-- Entrées de fichiers -->
+  <input type="file" id="fichier-fond" accept="application/pdf,image/*" hidden>
+  <input type="file" id="fichier-photo" accept="image/*" capture="environment" hidden>
+  <input type="file" id="fichier-image" accept="image/*" hidden>
+  <input type="file" id="fichier-projet" accept="application/json,.json,text/plain,.txt" hidden>
+  <input type="file" id="fichier-nomenclature" accept="application/json,.json" hidden>
+</div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Planche de contrôle — symboles des supports (v1.4.8)</title>
+<style>
+  body { font-family: "DejaVu Sans", Arial, sans-serif; margin: 16px; color: #111; background: #fff; }
+  h1 { font-size: 18px; margin: 0 0 6px; }
+  p { font-size: 13px; margin: 4px 0 12px; max-width: 70em; }
+  .outils { margin: 8px 0 14px; font-size: 14px; }
+  .outils button { font-size: 14px; padding: 6px 12px; margin-right: 6px; }
+  #planche { overflow: auto; border: 1px solid #ccc; }
+  @media print { .outils, p.ecran { display: none; } #planche { border: none; overflow: visible; } }
+</style>
+</head>
+<body>
+<h1>Planche de contrôle — symboles des supports (v1.4.8)</h1>
+<p class="ecran">Taille réelle : symboles à leur taille papier (1/500 : désignation 2,5 mm, bois ∅ 2,6 mm). Imprimer à 100 %, sans ajustement à la page. Page de validation : non liée depuis l'application, non mise en cache.</p>
+<div class="outils">
+  <button data-e="1">Taille réelle</button>
+  <button data-e="3">× 3</button>
+  <button data-e="6">× 6</button>
+  <button onclick="window.print()">Imprimer</button>
+</div>
+<div id="planche"></div>
+<script type="module">
+  import { planche } from './js/planche-supports.js';
+  const z = document.getElementById('planche');
+  const afficher = (e) => { z.innerHTML = planche(e); };
+  document.querySelectorAll('button[data-e]').forEach((b) => b.addEventListener('click', () => afficher(Number(b.dataset.e))));
+  afficher(3);
+</script>
+</body>
+</html>
